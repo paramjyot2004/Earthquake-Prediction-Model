@@ -1,0 +1,3701 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_324fab5d135b3f84b3657916499d7bdc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_324fab5d135b3f84b3657916499d7bdc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_324fab5d135b3f84b3657916499d7bdc = L.map(
+                "map_324fab5d135b3f84b3657916499d7bdc",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e025e7d8beaed01ea2f2fd84a74795ab = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e025e7d8beaed01ea2f2fd84a74795ab.addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var heat_map_5c14872438472608dfb4a5c5dd07e9b5 = L.heatLayer(
+                [[3.295, 95.982, 9.1], [38.297, 142.373, 9.1], [-36.122, -72.898, 8.8], [2.085, 97.108, 8.6], [2.327, 93.063, 8.6], [-16.265, -73.641, 8.4], [-4.438, 101.367, 8.4], [43.773, 147.321, 8.3], [46.592, 153.266, 8.3], [54.892, 153.221, 8.3], [-31.5729, -71.6744, 8.3], [-13.841, -67.553, 8.2], [0.802, 92.463, 8.2], [-19.6097, -70.7691, 8.2], [15.0222, -93.8993, 8.2], [-18.1125, -178.153, 8.2], [55.3635, -157.8876, 8.2], [41.815, 143.91, 8.16], [-62.877, 149.527, 8.1], [-49.312, 161.345, 8.1], [46.243, 154.524, 8.1], [-8.466, 157.043, 8.1], [-15.489, -172.095, 8.1], [-29.7228, -177.2794, 8.1], [-58.3753, -25.2637, 8.1], [-0.891, 136.952, 8.09], [-23.34, -70.294, 8.0], [19.055, -104.205, 8.0], [-3.98, 152.169, 8.0], [-20.187, -174.123, 8.0], [-13.386, -76.603, 8.0], [-10.799, 165.114, 8.0], [-5.8119, -75.2697, 8.0], [44.663, 149.3, 7.9], [0.729, 119.931, 7.9], [51.564, -177.632, 7.9], [-7.137, 122.589, 7.9], [-4.721, 102.087, 7.9], [-13.802, 97.453, 7.9], [63.5141, -147.4529, 7.9], [-2.625, 100.841, 7.9], [31.002, 103.322, 7.9], [36.281, 141.111, 7.9], [51.8486, 178.7352, 7.9], [-4.5049, 153.5216, 7.9], [-6.2464, 155.1718, 7.9], [56.0039, -149.1658, 7.9], [-18.4743, 179.3502, 7.9], [1.186, 122.857, 7.8], [-8.48, 121.896, 7.8], [12.982, 144.801, 7.8], [-10.477, 112.835, 7.8], [40.525, 143.419, 7.8], [-22.101, -176.772, 7.8], [54.841, 162.035, 7.8], [-5.233, 153.102, 7.8], [-5.496, 151.781, 7.8], [35.946, 90.541, 7.8], [51.146, 178.65, 7.8], [-19.987, -69.197, 7.8], [-25.996, -177.514, 7.8], [-45.762, 166.562, 7.8], [-12.517, 166.382, 7.8], [-3.487, 100.082, 7.8], [52.788, -132.101, 7.8], [28.2305, 84.7314, 7.8], [27.8386, 140.4931, 7.8], [-4.9521, 94.3299, 7.8], [0.3819, -79.9218, 7.8], [-42.7373, 173.054, 7.8], [-10.6812, 161.3273, 7.8], [55.0715, -158.596, 7.8], [37.2256, 37.0143, 7.8], [15.679, 121.172, 7.7], [11.742, -87.34, 7.7], [42.851, 139.197, 7.7], [-23.008, 169.9, 7.7], [-5.799, 154.178, 7.7], [-14.993, -75.675, 7.7], [-12.584, 166.676, 7.7], [-2.071, 124.891, 7.7], [23.772, 120.982, 7.7], [13.049, -88.66, 7.7], [23.419, 70.232, 7.7], [-21.696, -179.513, 7.7], [-23.884, 178.495, 7.7], [-9.284, 107.419, 7.7], [-22.247, -69.89, 7.7], [53.882, 152.886, 7.7], [-0.414, 132.885, 7.7], [-13.006, 166.51, 7.7], [38.058, 144.59, 7.7], [49.8, 145.064, 7.7], [28.033, 61.996, 7.7], [26.951, 65.5009, 7.7], [-60.2738, -46.4011, 7.7], [-20.5709, -70.4931, 7.7], [18.5429, 145.5073, 7.7], [54.4434, 168.857, 7.7], [19.4193, -78.756, 7.7]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 10,
+  "blur": 15,
+}
+            );
+        
+    
+            heat_map_5c14872438472608dfb4a5c5dd07e9b5.addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var marker_6f19831978c2efa3b9960af6d63cecae = L.marker(
+                [3.295, 95.982],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_30fa272780318bb7e6dab71062570232 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6f19831978c2efa3b9960af6d63cecae.setIcon(icon_30fa272780318bb7e6dab71062570232);
+        
+    
+        var popup_c6b37be4cdfa4dde031a25b558f60eb1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cc7b768721e03efba1d152737bd9f919 = $(`<div id="html_cc7b768721e03efba1d152737bd9f919" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 2004 Sumatra - Andaman Islands Earthquake<br><b>Date:</b> 2004-12-26 00:58:53.450000+00:00<br><b>Magnitude:</b> 9.1</div>`)[0];
+                popup_c6b37be4cdfa4dde031a25b558f60eb1.setContent(html_cc7b768721e03efba1d152737bd9f919);
+            
+        
+
+        marker_6f19831978c2efa3b9960af6d63cecae.bindPopup(popup_c6b37be4cdfa4dde031a25b558f60eb1)
+        ;
+
+        
+    
+    
+            var marker_73e29727d08e8019bce16e6f0f864279 = L.marker(
+                [38.297, 142.373],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_66ac692160a14ae333839fbb51d77b03 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_73e29727d08e8019bce16e6f0f864279.setIcon(icon_66ac692160a14ae333839fbb51d77b03);
+        
+    
+        var popup_f6e85401c876e996f7a38c10ef853569 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2c8948f025de8dbe4f462073dddc15bd = $(`<div id="html_2c8948f025de8dbe4f462073dddc15bd" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 2011 Great Tohoku Earthquake, Japan<br><b>Date:</b> 2011-03-11 05:46:24.120000+00:00<br><b>Magnitude:</b> 9.1</div>`)[0];
+                popup_f6e85401c876e996f7a38c10ef853569.setContent(html_2c8948f025de8dbe4f462073dddc15bd);
+            
+        
+
+        marker_73e29727d08e8019bce16e6f0f864279.bindPopup(popup_f6e85401c876e996f7a38c10ef853569)
+        ;
+
+        
+    
+    
+            var marker_94391ea318661044a7a670889cc6d867 = L.marker(
+                [-36.122, -72.898],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_bfc081b3545b2d75e149ee2aa5f38401 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_94391ea318661044a7a670889cc6d867.setIcon(icon_bfc081b3545b2d75e149ee2aa5f38401);
+        
+    
+        var popup_632101d8ff422c3eefafc92de4c72ec7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_82f369dd752dd9f37ccc4b7fa847971c = $(`<div id="html_82f369dd752dd9f37ccc4b7fa847971c" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 36 km WNW of Quirihue, Chile<br><b>Date:</b> 2010-02-27 06:34:11.530000+00:00<br><b>Magnitude:</b> 8.8</div>`)[0];
+                popup_632101d8ff422c3eefafc92de4c72ec7.setContent(html_82f369dd752dd9f37ccc4b7fa847971c);
+            
+        
+
+        marker_94391ea318661044a7a670889cc6d867.bindPopup(popup_632101d8ff422c3eefafc92de4c72ec7)
+        ;
+
+        
+    
+    
+            var marker_a979608112962d3379703c1f957ede43 = L.marker(
+                [2.085, 97.108],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_9dabb218f711570bdf18b4319d391189 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a979608112962d3379703c1f957ede43.setIcon(icon_9dabb218f711570bdf18b4319d391189);
+        
+    
+        var popup_e66ecd586a96521b3390d4a6d5897924 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cd9feb8f2f2f4f6882440c7e93fc0030 = $(`<div id="html_cd9feb8f2f2f4f6882440c7e93fc0030" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 78 km WSW of Singkil, Indonesia<br><b>Date:</b> 2005-03-28 16:09:36.530000+00:00<br><b>Magnitude:</b> 8.6</div>`)[0];
+                popup_e66ecd586a96521b3390d4a6d5897924.setContent(html_cd9feb8f2f2f4f6882440c7e93fc0030);
+            
+        
+
+        marker_a979608112962d3379703c1f957ede43.bindPopup(popup_e66ecd586a96521b3390d4a6d5897924)
+        ;
+
+        
+    
+    
+            var marker_4f77a569d39b3d2bc124a411cca59b08 = L.marker(
+                [2.327, 93.063],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_9813680eb1807bdd7b7e2c871ca42999 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4f77a569d39b3d2bc124a411cca59b08.setIcon(icon_9813680eb1807bdd7b7e2c871ca42999);
+        
+    
+        var popup_36b0bbac80d3e5e8c5d89345362fd870 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_356fe90b0779b21283bbb4efcbbaf0f6 = $(`<div id="html_356fe90b0779b21283bbb4efcbbaf0f6" style="width: 100.0%; height: 100.0%;"><b>Location:</b> off the west coast of northern Sumatra<br><b>Date:</b> 2012-04-11 08:38:36.720000+00:00<br><b>Magnitude:</b> 8.6</div>`)[0];
+                popup_36b0bbac80d3e5e8c5d89345362fd870.setContent(html_356fe90b0779b21283bbb4efcbbaf0f6);
+            
+        
+
+        marker_4f77a569d39b3d2bc124a411cca59b08.bindPopup(popup_36b0bbac80d3e5e8c5d89345362fd870)
+        ;
+
+        
+    
+    
+            var marker_d6e4ed0a792465607ee5579bad400c39 = L.marker(
+                [-16.265, -73.641],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_0ff8c5e98b840543c611f1aebba87995 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d6e4ed0a792465607ee5579bad400c39.setIcon(icon_0ff8c5e98b840543c611f1aebba87995);
+        
+    
+        var popup_9a4f35647c1c3b2c603a580848c428a8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_654554312c0635dac195c861fcd2629b = $(`<div id="html_654554312c0635dac195c861fcd2629b" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 6 km SSW of Atico, Peru<br><b>Date:</b> 2001-06-23 20:33:14.130000+00:00<br><b>Magnitude:</b> 8.4</div>`)[0];
+                popup_9a4f35647c1c3b2c603a580848c428a8.setContent(html_654554312c0635dac195c861fcd2629b);
+            
+        
+
+        marker_d6e4ed0a792465607ee5579bad400c39.bindPopup(popup_9a4f35647c1c3b2c603a580848c428a8)
+        ;
+
+        
+    
+    
+            var marker_ce858f50ccca764c431380a150e85df4 = L.marker(
+                [-4.438, 101.367],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_c2079024813e029d3a5de206cdefba27 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ce858f50ccca764c431380a150e85df4.setIcon(icon_c2079024813e029d3a5de206cdefba27);
+        
+    
+        var popup_0b2e4282e48ac68c93e46d97f91fe711 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_35819fd333c142a80e35a1dbdc83a11c = $(`<div id="html_35819fd333c142a80e35a1dbdc83a11c" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 122 km SW of Bengkulu, Indonesia<br><b>Date:</b> 2007-09-12 11:10:26.830000+00:00<br><b>Magnitude:</b> 8.4</div>`)[0];
+                popup_0b2e4282e48ac68c93e46d97f91fe711.setContent(html_35819fd333c142a80e35a1dbdc83a11c);
+            
+        
+
+        marker_ce858f50ccca764c431380a150e85df4.bindPopup(popup_0b2e4282e48ac68c93e46d97f91fe711)
+        ;
+
+        
+    
+    
+            var marker_7140e1f7aec8b26d38ce20358eb086e9 = L.marker(
+                [43.773, 147.321],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_506715fbeaf546f7c7d5277576208941 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7140e1f7aec8b26d38ce20358eb086e9.setIcon(icon_506715fbeaf546f7c7d5277576208941);
+        
+    
+        var popup_886666e27562ca6ec034d8830a9d63d5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8e93bae8b63839411ef7334d313d8e9e = $(`<div id="html_8e93bae8b63839411ef7334d313d8e9e" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 48 km E of Shikotan, Russia<br><b>Date:</b> 1994-10-04 13:22:55.840000+00:00<br><b>Magnitude:</b> 8.3</div>`)[0];
+                popup_886666e27562ca6ec034d8830a9d63d5.setContent(html_8e93bae8b63839411ef7334d313d8e9e);
+            
+        
+
+        marker_7140e1f7aec8b26d38ce20358eb086e9.bindPopup(popup_886666e27562ca6ec034d8830a9d63d5)
+        ;
+
+        
+    
+    
+            var marker_deb0e0e39fe25ff25428869fc774e40f = L.marker(
+                [46.592, 153.266],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_47e079b551abb3e12c01299a0746c4c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_deb0e0e39fe25ff25428869fc774e40f.setIcon(icon_47e079b551abb3e12c01299a0746c4c1);
+        
+    
+        var popup_f33398298cf98680efb49b88b9bed787 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e0ffd817fee1d41756a21e52865564fc = $(`<div id="html_e0ffd817fee1d41756a21e52865564fc" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Kuril Islands<br><b>Date:</b> 2006-11-15 11:14:13.570000+00:00<br><b>Magnitude:</b> 8.3</div>`)[0];
+                popup_f33398298cf98680efb49b88b9bed787.setContent(html_e0ffd817fee1d41756a21e52865564fc);
+            
+        
+
+        marker_deb0e0e39fe25ff25428869fc774e40f.bindPopup(popup_f33398298cf98680efb49b88b9bed787)
+        ;
+
+        
+    
+    
+            var marker_e3e7069ef2bb8feb0da7294b2819e926 = L.marker(
+                [54.892, 153.221],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_631fd3552613f65ddd7db4cae564ab3c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e3e7069ef2bb8feb0da7294b2819e926.setIcon(icon_631fd3552613f65ddd7db4cae564ab3c);
+        
+    
+        var popup_a3679e097aecd9947d1900260445f36c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_681e50dc89addc1a6f66493d951d7aa4 = $(`<div id="html_681e50dc89addc1a6f66493d951d7aa4" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Sea of Okhotsk<br><b>Date:</b> 2013-05-24 05:44:48.980000+00:00<br><b>Magnitude:</b> 8.3</div>`)[0];
+                popup_a3679e097aecd9947d1900260445f36c.setContent(html_681e50dc89addc1a6f66493d951d7aa4);
+            
+        
+
+        marker_e3e7069ef2bb8feb0da7294b2819e926.bindPopup(popup_a3679e097aecd9947d1900260445f36c)
+        ;
+
+        
+    
+    
+            var marker_097828ccf4619261b239cf81c70849b6 = L.marker(
+                [-31.5729, -71.6744],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_a7dd31051634d28d1d54cd8baa0c8f04 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_097828ccf4619261b239cf81c70849b6.setIcon(icon_a7dd31051634d28d1d54cd8baa0c8f04);
+        
+    
+        var popup_94fb582151bc4fb6eaa9101838473dd9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_74957dac0ff04837faffb25741e6cf1c = $(`<div id="html_74957dac0ff04837faffb25741e6cf1c" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 48 km W of Illapel, Chile<br><b>Date:</b> 2015-09-16 22:54:32.860000+00:00<br><b>Magnitude:</b> 8.3</div>`)[0];
+                popup_94fb582151bc4fb6eaa9101838473dd9.setContent(html_74957dac0ff04837faffb25741e6cf1c);
+            
+        
+
+        marker_097828ccf4619261b239cf81c70849b6.bindPopup(popup_94fb582151bc4fb6eaa9101838473dd9)
+        ;
+
+        
+    
+    
+            var marker_05055ef70b7629ff730b9789fd2df1e2 = L.marker(
+                [-13.841, -67.553],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_1e8c580f6eb90901557d46158469d6ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_05055ef70b7629ff730b9789fd2df1e2.setIcon(icon_1e8c580f6eb90901557d46158469d6ec);
+        
+    
+        var popup_f0a979f0f88b2be460a3c84882f10b16 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_06071e12ddf5719d97c1d71b14e1b5b3 = $(`<div id="html_06071e12ddf5719d97c1d71b14e1b5b3" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 55 km NNW of Reyes, Bolivia<br><b>Date:</b> 1994-06-09 00:33:16.230000+00:00<br><b>Magnitude:</b> 8.2</div>`)[0];
+                popup_f0a979f0f88b2be460a3c84882f10b16.setContent(html_06071e12ddf5719d97c1d71b14e1b5b3);
+            
+        
+
+        marker_05055ef70b7629ff730b9789fd2df1e2.bindPopup(popup_f0a979f0f88b2be460a3c84882f10b16)
+        ;
+
+        
+    
+    
+            var marker_922b90a4692b95d79023116300e2a39d = L.marker(
+                [0.802, 92.463],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_608cfa060e855a1dc7ad0a66b0f24d4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_922b90a4692b95d79023116300e2a39d.setIcon(icon_608cfa060e855a1dc7ad0a66b0f24d4a);
+        
+    
+        var popup_e400b9b8e6cae5bca0cd0bca063359e2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a9d1cef1e5b838354f7aa0e22ace55cc = $(`<div id="html_a9d1cef1e5b838354f7aa0e22ace55cc" style="width: 100.0%; height: 100.0%;"><b>Location:</b> off the west coast of northern Sumatra<br><b>Date:</b> 2012-04-11 10:43:10.850000+00:00<br><b>Magnitude:</b> 8.2</div>`)[0];
+                popup_e400b9b8e6cae5bca0cd0bca063359e2.setContent(html_a9d1cef1e5b838354f7aa0e22ace55cc);
+            
+        
+
+        marker_922b90a4692b95d79023116300e2a39d.bindPopup(popup_e400b9b8e6cae5bca0cd0bca063359e2)
+        ;
+
+        
+    
+    
+            var marker_5acda01eca23b83136f17155b9d01c7e = L.marker(
+                [-19.6097, -70.7691],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_be72cf4677e57cc6833723d1b1f6bfa6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5acda01eca23b83136f17155b9d01c7e.setIcon(icon_be72cf4677e57cc6833723d1b1f6bfa6);
+        
+    
+        var popup_fe59f8e87aeaf9601191bd78118c8ddd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_027a1e2b3fe43412c4d2970cc8a0d0f1 = $(`<div id="html_027a1e2b3fe43412c4d2970cc8a0d0f1" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 93 km NW of Iquique, Chile<br><b>Date:</b> 2014-04-01 23:46:47.260000+00:00<br><b>Magnitude:</b> 8.2</div>`)[0];
+                popup_fe59f8e87aeaf9601191bd78118c8ddd.setContent(html_027a1e2b3fe43412c4d2970cc8a0d0f1);
+            
+        
+
+        marker_5acda01eca23b83136f17155b9d01c7e.bindPopup(popup_fe59f8e87aeaf9601191bd78118c8ddd)
+        ;
+
+        
+    
+    
+            var marker_1e354cd06330ed0a8b252824cf69251c = L.marker(
+                [15.0222, -93.8993],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_df5ce783b212d388b844c3a41b72f8a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1e354cd06330ed0a8b252824cf69251c.setIcon(icon_df5ce783b212d388b844c3a41b72f8a8);
+        
+    
+        var popup_2837484b6f3880b4fc4395d97e96e3bd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_99f54e211720bb4326c349640ab6218d = $(`<div id="html_99f54e211720bb4326c349640ab6218d" style="width: 100.0%; height: 100.0%;"><b>Location:</b> near the coast of Chiapas, Mexico<br><b>Date:</b> 2017-09-08 04:49:19.180000+00:00<br><b>Magnitude:</b> 8.2</div>`)[0];
+                popup_2837484b6f3880b4fc4395d97e96e3bd.setContent(html_99f54e211720bb4326c349640ab6218d);
+            
+        
+
+        marker_1e354cd06330ed0a8b252824cf69251c.bindPopup(popup_2837484b6f3880b4fc4395d97e96e3bd)
+        ;
+
+        
+    
+    
+            var marker_0fdc706e99aca2d67d5fb1868e5c98ee = L.marker(
+                [-18.1125, -178.153],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_41d2244acfa8b7d2f4e05a957fd75871 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0fdc706e99aca2d67d5fb1868e5c98ee.setIcon(icon_41d2244acfa8b7d2f4e05a957fd75871);
+        
+    
+        var popup_3ae6516a6b55c2b2b200aeb58225d7c2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4f68c069f5dc5c1a143e506fc9238d85 = $(`<div id="html_4f68c069f5dc5c1a143e506fc9238d85" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 267 km E of Levuka, Fiji<br><b>Date:</b> 2018-08-19 00:19:40.670000+00:00<br><b>Magnitude:</b> 8.2</div>`)[0];
+                popup_3ae6516a6b55c2b2b200aeb58225d7c2.setContent(html_4f68c069f5dc5c1a143e506fc9238d85);
+            
+        
+
+        marker_0fdc706e99aca2d67d5fb1868e5c98ee.bindPopup(popup_3ae6516a6b55c2b2b200aeb58225d7c2)
+        ;
+
+        
+    
+    
+            var marker_7e9b03ad2ecbcb76607b58ee2072dc2c = L.marker(
+                [55.3635, -157.8876],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_dc276f650675f7c0aac53461445aa8ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7e9b03ad2ecbcb76607b58ee2072dc2c.setIcon(icon_dc276f650675f7c0aac53461445aa8ae);
+        
+    
+        var popup_71e275af25cc0c299ee2c5f82021e60e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3d75e941aefe99c934050ca0377e3192 = $(`<div id="html_3d75e941aefe99c934050ca0377e3192" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Alaska Peninsula<br><b>Date:</b> 2021-07-29 06:15:49.188000+00:00<br><b>Magnitude:</b> 8.2</div>`)[0];
+                popup_71e275af25cc0c299ee2c5f82021e60e.setContent(html_3d75e941aefe99c934050ca0377e3192);
+            
+        
+
+        marker_7e9b03ad2ecbcb76607b58ee2072dc2c.bindPopup(popup_71e275af25cc0c299ee2c5f82021e60e)
+        ;
+
+        
+    
+    
+            var marker_7b9e496d42c11f160756a547678fddcb = L.marker(
+                [41.815, 143.91],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_a3108bc2bd5100c1b807f2b7cc0f719b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7b9e496d42c11f160756a547678fddcb.setIcon(icon_a3108bc2bd5100c1b807f2b7cc0f719b);
+        
+    
+        var popup_45441de83184af1e6c98a330d5b3aae4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6dd775bed343d6a4f835164da8f0e2b3 = $(`<div id="html_6dd775bed343d6a4f835164da8f0e2b3" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 134 km SSW of Kushiro, Japan<br><b>Date:</b> 2003-09-25 19:50:06.360000+00:00<br><b>Magnitude:</b> 8.16</div>`)[0];
+                popup_45441de83184af1e6c98a330d5b3aae4.setContent(html_6dd775bed343d6a4f835164da8f0e2b3);
+            
+        
+
+        marker_7b9e496d42c11f160756a547678fddcb.bindPopup(popup_45441de83184af1e6c98a330d5b3aae4)
+        ;
+
+        
+    
+    
+            var marker_5d66569b05cc69d22ad786cb64a7be6d = L.marker(
+                [-62.877, 149.527],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_ffed1bd32a1f3f5f17c8c2f02ba36a23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5d66569b05cc69d22ad786cb64a7be6d.setIcon(icon_ffed1bd32a1f3f5f17c8c2f02ba36a23);
+        
+    
+        var popup_6f1b92855b15589cb9f7ac78ba841bfe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c9e149c80820aa5c56368c6db55e3a4b = $(`<div id="html_c9e149c80820aa5c56368c6db55e3a4b" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Balleny Islands region<br><b>Date:</b> 1998-03-25 03:12:25.070000+00:00<br><b>Magnitude:</b> 8.1</div>`)[0];
+                popup_6f1b92855b15589cb9f7ac78ba841bfe.setContent(html_c9e149c80820aa5c56368c6db55e3a4b);
+            
+        
+
+        marker_5d66569b05cc69d22ad786cb64a7be6d.bindPopup(popup_6f1b92855b15589cb9f7ac78ba841bfe)
+        ;
+
+        
+    
+    
+            var marker_a89f94b1a3df2de2edeef651cbf312c7 = L.marker(
+                [-49.312, 161.345],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_23d4f819574f954b91941cfa14c4ccac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a89f94b1a3df2de2edeef651cbf312c7.setIcon(icon_23d4f819574f954b91941cfa14c4ccac);
+        
+    
+        var popup_783105d12d82ed8ea6a6c56ea0cd230f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6379cdfe807322ee2b27c37874ae61b5 = $(`<div id="html_6379cdfe807322ee2b27c37874ae61b5" style="width: 100.0%; height: 100.0%;"><b>Location:</b> north of Macquarie Island<br><b>Date:</b> 2004-12-23 14:59:04.410000+00:00<br><b>Magnitude:</b> 8.1</div>`)[0];
+                popup_783105d12d82ed8ea6a6c56ea0cd230f.setContent(html_6379cdfe807322ee2b27c37874ae61b5);
+            
+        
+
+        marker_a89f94b1a3df2de2edeef651cbf312c7.bindPopup(popup_783105d12d82ed8ea6a6c56ea0cd230f)
+        ;
+
+        
+    
+    
+            var marker_1b6fff3e48c205ff37c8e747fa64c0df = L.marker(
+                [46.243, 154.524],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_9fbbdc8d55376a2f4809da31d0cc240f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1b6fff3e48c205ff37c8e747fa64c0df.setIcon(icon_9fbbdc8d55376a2f4809da31d0cc240f);
+        
+    
+        var popup_955fb85819634f85f902759776c4aad4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_84a0ac3ded6606bbeead5cb596189a8e = $(`<div id="html_84a0ac3ded6606bbeead5cb596189a8e" style="width: 100.0%; height: 100.0%;"><b>Location:</b> east of the Kuril Islands<br><b>Date:</b> 2007-01-13 04:23:21.160000+00:00<br><b>Magnitude:</b> 8.1</div>`)[0];
+                popup_955fb85819634f85f902759776c4aad4.setContent(html_84a0ac3ded6606bbeead5cb596189a8e);
+            
+        
+
+        marker_1b6fff3e48c205ff37c8e747fa64c0df.bindPopup(popup_955fb85819634f85f902759776c4aad4)
+        ;
+
+        
+    
+    
+            var marker_f621f303038c936ccf0fc6c99c31aeb7 = L.marker(
+                [-8.466, 157.043],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_b3e5e1830ca668efcba17b96b5bcfdd4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f621f303038c936ccf0fc6c99c31aeb7.setIcon(icon_b3e5e1830ca668efcba17b96b5bcfdd4);
+        
+    
+        var popup_e06e59f6b7cd72be062704ffebd803e2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5b5dafdd67e54f1c93d7d26949b65f31 = $(`<div id="html_5b5dafdd67e54f1c93d7d26949b65f31" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 45 km SSE of Gizo, Solomon Islands<br><b>Date:</b> 2007-04-01 20:39:58.710000+00:00<br><b>Magnitude:</b> 8.1</div>`)[0];
+                popup_e06e59f6b7cd72be062704ffebd803e2.setContent(html_5b5dafdd67e54f1c93d7d26949b65f31);
+            
+        
+
+        marker_f621f303038c936ccf0fc6c99c31aeb7.bindPopup(popup_e06e59f6b7cd72be062704ffebd803e2)
+        ;
+
+        
+    
+    
+            var marker_3861c470ec5ff0b44cc520dbd2771275 = L.marker(
+                [-15.489, -172.095],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_577c3c2651872d395951113b0fd870ad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3861c470ec5ff0b44cc520dbd2771275.setIcon(icon_577c3c2651872d395951113b0fd870ad);
+        
+    
+        var popup_b7ec2677b8c14cb101035b8e5a4a8b40 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6c29ea2844a73e4f336de337469b81aa = $(`<div id="html_6c29ea2844a73e4f336de337469b81aa" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 168 km SSW of Matavai, Samoa<br><b>Date:</b> 2009-09-29 17:48:10.990000+00:00<br><b>Magnitude:</b> 8.1</div>`)[0];
+                popup_b7ec2677b8c14cb101035b8e5a4a8b40.setContent(html_6c29ea2844a73e4f336de337469b81aa);
+            
+        
+
+        marker_3861c470ec5ff0b44cc520dbd2771275.bindPopup(popup_b7ec2677b8c14cb101035b8e5a4a8b40)
+        ;
+
+        
+    
+    
+            var marker_efaf38f9a19d2d8756dc020b6bb943e1 = L.marker(
+                [-29.7228, -177.2794],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_d6152f8c20609d5a68068c8459314026 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_efaf38f9a19d2d8756dc020b6bb943e1.setIcon(icon_d6152f8c20609d5a68068c8459314026);
+        
+    
+        var popup_b79b91a2fbb052d9e015a3aaa5504ffb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b0506a8b63eeeeb76141e2ef4a9e4c8f = $(`<div id="html_b0506a8b63eeeeb76141e2ef4a9e4c8f" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Kermadec Islands, New Zealand<br><b>Date:</b> 2021-03-04 19:28:33.178000+00:00<br><b>Magnitude:</b> 8.1</div>`)[0];
+                popup_b79b91a2fbb052d9e015a3aaa5504ffb.setContent(html_b0506a8b63eeeeb76141e2ef4a9e4c8f);
+            
+        
+
+        marker_efaf38f9a19d2d8756dc020b6bb943e1.bindPopup(popup_b79b91a2fbb052d9e015a3aaa5504ffb)
+        ;
+
+        
+    
+    
+            var marker_91804685fb13f6a65fcb3a9914f1428e = L.marker(
+                [-58.3753, -25.2637],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_e74e76d1b7df86f8879861dc693bafdd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_91804685fb13f6a65fcb3a9914f1428e.setIcon(icon_e74e76d1b7df86f8879861dc693bafdd);
+        
+    
+        var popup_c0edeba0cda7c322047c3a6f982906d0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_26a54fb65dc77ed6755849ac3cc6c3c3 = $(`<div id="html_26a54fb65dc77ed6755849ac3cc6c3c3" style="width: 100.0%; height: 100.0%;"><b>Location:</b> South Sandwich Islands region<br><b>Date:</b> 2021-08-12 18:35:17.231000+00:00<br><b>Magnitude:</b> 8.1</div>`)[0];
+                popup_c0edeba0cda7c322047c3a6f982906d0.setContent(html_26a54fb65dc77ed6755849ac3cc6c3c3);
+            
+        
+
+        marker_91804685fb13f6a65fcb3a9914f1428e.bindPopup(popup_c0edeba0cda7c322047c3a6f982906d0)
+        ;
+
+        
+    
+    
+            var marker_b3a8e559f0b4435a9181ce6a36cfe5c5 = L.marker(
+                [-0.891, 136.952],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_66547c18028814015147f35907e5deae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b3a8e559f0b4435a9181ce6a36cfe5c5.setIcon(icon_66547c18028814015147f35907e5deae);
+        
+    
+        var popup_8b1a809cb4c81c3eb07c0394f02a9af4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a543eaafa443798a538f9082e5608e73 = $(`<div id="html_a543eaafa443798a538f9082e5608e73" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 101 km ENE of Biak, Indonesia<br><b>Date:</b> 1996-02-17 05:59:30.550000+00:00<br><b>Magnitude:</b> 8.09</div>`)[0];
+                popup_8b1a809cb4c81c3eb07c0394f02a9af4.setContent(html_a543eaafa443798a538f9082e5608e73);
+            
+        
+
+        marker_b3a8e559f0b4435a9181ce6a36cfe5c5.bindPopup(popup_8b1a809cb4c81c3eb07c0394f02a9af4)
+        ;
+
+        
+    
+    
+            var marker_e670d74ecfa8db9af0b88f3c4a9eedcf = L.marker(
+                [-23.34, -70.294],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_f413ae2efaa60a3ac018a2dcf17195fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e670d74ecfa8db9af0b88f3c4a9eedcf.setIcon(icon_f413ae2efaa60a3ac018a2dcf17195fb);
+        
+    
+        var popup_e9021e43a9a5a3d2e13ddf06b9031983 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d26525da6b85b73c36df148d7e80b668 = $(`<div id="html_d26525da6b85b73c36df148d7e80b668" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 36 km NNE of Antofagasta, Chile<br><b>Date:</b> 1995-07-30 05:11:23.630000+00:00<br><b>Magnitude:</b> 8.0</div>`)[0];
+                popup_e9021e43a9a5a3d2e13ddf06b9031983.setContent(html_d26525da6b85b73c36df148d7e80b668);
+            
+        
+
+        marker_e670d74ecfa8db9af0b88f3c4a9eedcf.bindPopup(popup_e9021e43a9a5a3d2e13ddf06b9031983)
+        ;
+
+        
+    
+    
+            var marker_a8ed07e79345302ee8d5ef544fce6af1 = L.marker(
+                [19.055, -104.205],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_e2c210d06a1ec51ad4aff415f539a260 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a8ed07e79345302ee8d5ef544fce6af1.setIcon(icon_e2c210d06a1ec51ad4aff415f539a260);
+        
+    
+        var popup_be6834e692e1c8e24d58da2ec0d76656 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f4286dc86eca35329bebb1f4eeda7069 = $(`<div id="html_f4286dc86eca35329bebb1f4eeda7069" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 5 km E of El Colomo, Mexico<br><b>Date:</b> 1995-10-09 15:35:53.910000+00:00<br><b>Magnitude:</b> 8.0</div>`)[0];
+                popup_be6834e692e1c8e24d58da2ec0d76656.setContent(html_f4286dc86eca35329bebb1f4eeda7069);
+            
+        
+
+        marker_a8ed07e79345302ee8d5ef544fce6af1.bindPopup(popup_be6834e692e1c8e24d58da2ec0d76656)
+        ;
+
+        
+    
+    
+            var marker_99627569b5c203cd2d0dc8d6bea23e76 = L.marker(
+                [-3.98, 152.169],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_dfbe60d06bec23e06171245c3ecfb6ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_99627569b5c203cd2d0dc8d6bea23e76.setIcon(icon_dfbe60d06bec23e06171245c3ecfb6ba);
+        
+    
+        var popup_f27d4134878d5364da57e49857f795ec = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_26067e39c89542a5cadecf520f104906 = $(`<div id="html_26067e39c89542a5cadecf520f104906" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 24 km N of Rabaul, Papua New Guinea<br><b>Date:</b> 2000-11-16 04:54:56.740000+00:00<br><b>Magnitude:</b> 8.0</div>`)[0];
+                popup_f27d4134878d5364da57e49857f795ec.setContent(html_26067e39c89542a5cadecf520f104906);
+            
+        
+
+        marker_99627569b5c203cd2d0dc8d6bea23e76.bindPopup(popup_f27d4134878d5364da57e49857f795ec)
+        ;
+
+        
+    
+    
+            var marker_4a0ef8dc4e3d27a1df1917968ce4e36d = L.marker(
+                [-20.187, -174.123],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_75c17af89353625027195d82b3a6a3cc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4a0ef8dc4e3d27a1df1917968ce4e36d.setIcon(icon_75c17af89353625027195d82b3a6a3cc);
+        
+    
+        var popup_799fd3967500b48cdd3856b1337d0f42 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_24416859b524a08343d44fcb10d62670 = $(`<div id="html_24416859b524a08343d44fcb10d62670" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 47 km SSE of Pangai, Tonga<br><b>Date:</b> 2006-05-03 15:26:40.290000+00:00<br><b>Magnitude:</b> 8.0</div>`)[0];
+                popup_799fd3967500b48cdd3856b1337d0f42.setContent(html_24416859b524a08343d44fcb10d62670);
+            
+        
+
+        marker_4a0ef8dc4e3d27a1df1917968ce4e36d.bindPopup(popup_799fd3967500b48cdd3856b1337d0f42)
+        ;
+
+        
+    
+    
+            var marker_86840dd60d5801bfb185c0899e9a27e2 = L.marker(
+                [-13.386, -76.603],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_acac06a3a756621bfb6d2c25df9b4eaf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_86840dd60d5801bfb185c0899e9a27e2.setIcon(icon_acac06a3a756621bfb6d2c25df9b4eaf);
+        
+    
+        var popup_79e4efb0fa229d1c11878a0a001b799b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e93e637608f7a8c0bcd027701ff10ef8 = $(`<div id="html_e93e637608f7a8c0bcd027701ff10ef8" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 41 km SW of San Vicente de Cañete, Peru<br><b>Date:</b> 2007-08-15 23:40:57.890000+00:00<br><b>Magnitude:</b> 8.0</div>`)[0];
+                popup_79e4efb0fa229d1c11878a0a001b799b.setContent(html_e93e637608f7a8c0bcd027701ff10ef8);
+            
+        
+
+        marker_86840dd60d5801bfb185c0899e9a27e2.bindPopup(popup_79e4efb0fa229d1c11878a0a001b799b)
+        ;
+
+        
+    
+    
+            var marker_a1a122926580c5a57f1ffd99d4ef85be = L.marker(
+                [-10.799, 165.114],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_5dde1e6558d7c1eec6ffb333590e744a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a1a122926580c5a57f1ffd99d4ef85be.setIcon(icon_5dde1e6558d7c1eec6ffb333590e744a);
+        
+    
+        var popup_25a0df324c12bb425fbfb32fcbdf590c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4b83f3c55beceb3cc09aa1b156d01868 = $(`<div id="html_4b83f3c55beceb3cc09aa1b156d01868" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 75 km W of Lata, Solomon Islands<br><b>Date:</b> 2013-02-06 01:12:25.830000+00:00<br><b>Magnitude:</b> 8.0</div>`)[0];
+                popup_25a0df324c12bb425fbfb32fcbdf590c.setContent(html_4b83f3c55beceb3cc09aa1b156d01868);
+            
+        
+
+        marker_a1a122926580c5a57f1ffd99d4ef85be.bindPopup(popup_25a0df324c12bb425fbfb32fcbdf590c)
+        ;
+
+        
+    
+    
+            var marker_c14060c6f7f7c22486bab4370088b12e = L.marker(
+                [-5.8119, -75.2697],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_d85b684fa0a976eaa00d47e20a3a5b73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c14060c6f7f7c22486bab4370088b12e.setIcon(icon_d85b684fa0a976eaa00d47e20a3a5b73);
+        
+    
+        var popup_7f136f3d34c82fb7119344badf9af193 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b238dbd810e33e675a87de27ca3af986 = $(`<div id="html_b238dbd810e33e675a87de27ca3af986" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 78 km NE of Navarro, Peru<br><b>Date:</b> 2019-05-26 07:41:15.073000+00:00<br><b>Magnitude:</b> 8.0</div>`)[0];
+                popup_7f136f3d34c82fb7119344badf9af193.setContent(html_b238dbd810e33e675a87de27ca3af986);
+            
+        
+
+        marker_c14060c6f7f7c22486bab4370088b12e.bindPopup(popup_7f136f3d34c82fb7119344badf9af193)
+        ;
+
+        
+    
+    
+            var marker_5a7b4f49213477741f9907135600cd51 = L.marker(
+                [44.663, 149.3],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_370f4545d4ebfdcae48914fdf4241bf7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5a7b4f49213477741f9907135600cd51.setIcon(icon_370f4545d4ebfdcae48914fdf4241bf7);
+        
+    
+        var popup_f9265fd8107437a1c92d6a43f26f57fd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a86eb92ae5223fc6c1a3c0ceb2c691ad = $(`<div id="html_a86eb92ae5223fc6c1a3c0ceb2c691ad" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 128 km ESE of Kuril’sk, Russia<br><b>Date:</b> 1995-12-03 18:01:08.990000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_f9265fd8107437a1c92d6a43f26f57fd.setContent(html_a86eb92ae5223fc6c1a3c0ceb2c691ad);
+            
+        
+
+        marker_5a7b4f49213477741f9907135600cd51.bindPopup(popup_f9265fd8107437a1c92d6a43f26f57fd)
+        ;
+
+        
+    
+    
+            var marker_17ee393097cddf4f743190f11e6e23f3 = L.marker(
+                [0.729, 119.931],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_bfae190d9ec5d33951ecfc1b17d55214 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_17ee393097cddf4f743190f11e6e23f3.setIcon(icon_bfae190d9ec5d33951ecfc1b17d55214);
+        
+    
+        var popup_67674e3ec0393893f1b8f6a7231d28eb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fd2962631df49efa4f080caede8fc7d3 = $(`<div id="html_fd2962631df49efa4f080caede8fc7d3" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 181 km N of Palu, Indonesia<br><b>Date:</b> 1996-01-01 08:05:10.830000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_67674e3ec0393893f1b8f6a7231d28eb.setContent(html_fd2962631df49efa4f080caede8fc7d3);
+            
+        
+
+        marker_17ee393097cddf4f743190f11e6e23f3.bindPopup(popup_67674e3ec0393893f1b8f6a7231d28eb)
+        ;
+
+        
+    
+    
+            var marker_bbd5123cb615fc86154baffd0fb83662 = L.marker(
+                [51.564, -177.632],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_87ba7f1c522864fb80ac1d9898e9d065 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_bbd5123cb615fc86154baffd0fb83662.setIcon(icon_87ba7f1c522864fb80ac1d9898e9d065);
+        
+    
+        var popup_0519d59a8d1d3e89a14101aa427ad369 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2624fefb23d6de7f6b6c617ffe404448 = $(`<div id="html_2624fefb23d6de7f6b6c617ffe404448" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 77 km WSW of Adak, Alaska<br><b>Date:</b> 1996-06-10 04:03:35.480000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_0519d59a8d1d3e89a14101aa427ad369.setContent(html_2624fefb23d6de7f6b6c617ffe404448);
+            
+        
+
+        marker_bbd5123cb615fc86154baffd0fb83662.bindPopup(popup_0519d59a8d1d3e89a14101aa427ad369)
+        ;
+
+        
+    
+    
+            var marker_a7951c774671e2fad119369f61bfe1e7 = L.marker(
+                [-7.137, 122.589],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_c299ed311619e9269dd4166a5a3da85a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a7951c774671e2fad119369f61bfe1e7.setIcon(icon_c299ed311619e9269dd4166a5a3da85a);
+        
+    
+        var popup_329fb09228e02d381dd4e56e22536b3c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_68024638d684aea7419c40108cf3a7ab = $(`<div id="html_68024638d684aea7419c40108cf3a7ab" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 169 km NNE of Maumere, Indonesia<br><b>Date:</b> 1996-06-17 11:22:18.540000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_329fb09228e02d381dd4e56e22536b3c.setContent(html_68024638d684aea7419c40108cf3a7ab);
+            
+        
+
+        marker_a7951c774671e2fad119369f61bfe1e7.bindPopup(popup_329fb09228e02d381dd4e56e22536b3c)
+        ;
+
+        
+    
+    
+            var marker_822e7a1d0d238c6ddf5559242ef9f048 = L.marker(
+                [-4.721, 102.087],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_7a71b30d62752cbfb6c8c44766630a52 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_822e7a1d0d238c6ddf5559242ef9f048.setIcon(icon_7a71b30d62752cbfb6c8c44766630a52);
+        
+    
+        var popup_298aab950e79cdbe921a748eced21b15 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3983d3ee14e4c1cd3d43affc49128ecf = $(`<div id="html_3983d3ee14e4c1cd3d43affc49128ecf" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 103 km S of Bengkulu, Indonesia<br><b>Date:</b> 2000-06-04 16:28:26.170000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_298aab950e79cdbe921a748eced21b15.setContent(html_3983d3ee14e4c1cd3d43affc49128ecf);
+            
+        
+
+        marker_822e7a1d0d238c6ddf5559242ef9f048.bindPopup(popup_298aab950e79cdbe921a748eced21b15)
+        ;
+
+        
+    
+    
+            var marker_2227dae3ea52db4395938005632c3556 = L.marker(
+                [-13.802, 97.453],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_7741b2ef5ea517c0c7a6455dd0a8dab5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2227dae3ea52db4395938005632c3556.setIcon(icon_7741b2ef5ea517c0c7a6455dd0a8dab5);
+        
+    
+        var popup_96eedec25cc3fc67095e938fca281a57 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b2f98a3d472fac9b4b51206fcd9e9f93 = $(`<div id="html_b2f98a3d472fac9b4b51206fcd9e9f93" style="width: 100.0%; height: 100.0%;"><b>Location:</b> South Indian Ocean<br><b>Date:</b> 2000-06-18 14:44:13.310000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_96eedec25cc3fc67095e938fca281a57.setContent(html_b2f98a3d472fac9b4b51206fcd9e9f93);
+            
+        
+
+        marker_2227dae3ea52db4395938005632c3556.bindPopup(popup_96eedec25cc3fc67095e938fca281a57)
+        ;
+
+        
+    
+    
+            var marker_072f76c45f0e2b6f340ad03fa9dbd647 = L.marker(
+                [63.5141, -147.4529],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_14d4b00fac3e85ea200c6fed86b7e2a7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_072f76c45f0e2b6f340ad03fa9dbd647.setIcon(icon_14d4b00fac3e85ea200c6fed86b7e2a7);
+        
+    
+        var popup_e928ccd1a666d062086b3a6ed8a6bec4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_691373554191197726086213ed37d93d = $(`<div id="html_691373554191197726086213ed37d93d" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 75 km E of Cantwell, Alaska<br><b>Date:</b> 2002-11-03 22:12:41.518000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_e928ccd1a666d062086b3a6ed8a6bec4.setContent(html_691373554191197726086213ed37d93d);
+            
+        
+
+        marker_072f76c45f0e2b6f340ad03fa9dbd647.bindPopup(popup_e928ccd1a666d062086b3a6ed8a6bec4)
+        ;
+
+        
+    
+    
+            var marker_290acf84aff62357252192227b199a5b = L.marker(
+                [-2.625, 100.841],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_2841c541f3e5cb58e7aff221b3bb2c41 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_290acf84aff62357252192227b199a5b.setIcon(icon_2841c541f3e5cb58e7aff221b3bb2c41);
+        
+    
+        var popup_2c41b6422a3112a09fd9c8deb9a51d8e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_20a9c9167d78453fcbb5038ee3e0395e = $(`<div id="html_20a9c9167d78453fcbb5038ee3e0395e" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 87 km SW of Sungai Penuh, Indonesia<br><b>Date:</b> 2007-09-12 23:49:03.720000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_2c41b6422a3112a09fd9c8deb9a51d8e.setContent(html_20a9c9167d78453fcbb5038ee3e0395e);
+            
+        
+
+        marker_290acf84aff62357252192227b199a5b.bindPopup(popup_2c41b6422a3112a09fd9c8deb9a51d8e)
+        ;
+
+        
+    
+    
+            var marker_c7d29b7b11853629d4f88403ff73b562 = L.marker(
+                [31.002, 103.322],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_b2bde8a77375f82f7ce034736fd5927e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c7d29b7b11853629d4f88403ff73b562.setIcon(icon_b2bde8a77375f82f7ce034736fd5927e);
+        
+    
+        var popup_d1e0658fd6bfbddf81955ce3b4946d5e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5da9b5df70f68432b21f61580a0a8d4b = $(`<div id="html_5da9b5df70f68432b21f61580a0a8d4b" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 58 km W of Tianpeng, China<br><b>Date:</b> 2008-05-12 06:28:01.570000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_d1e0658fd6bfbddf81955ce3b4946d5e.setContent(html_5da9b5df70f68432b21f61580a0a8d4b);
+            
+        
+
+        marker_c7d29b7b11853629d4f88403ff73b562.bindPopup(popup_d1e0658fd6bfbddf81955ce3b4946d5e)
+        ;
+
+        
+    
+    
+            var marker_af8711c7aaed23ed5697662f8b267fa4 = L.marker(
+                [36.281, 141.111],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_b51c086508036f41b4369f3ecc8b5e27 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_af8711c7aaed23ed5697662f8b267fa4.setIcon(icon_b51c086508036f41b4369f3ecc8b5e27);
+        
+    
+        var popup_36a9969886eb860dd61ace97a33e94b7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9d3daab24d566d1e50f38e99a01130d1 = $(`<div id="html_9d3daab24d566d1e50f38e99a01130d1" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 47 km E of ?arai, Japan<br><b>Date:</b> 2011-03-11 06:15:40.280000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_36a9969886eb860dd61ace97a33e94b7.setContent(html_9d3daab24d566d1e50f38e99a01130d1);
+            
+        
+
+        marker_af8711c7aaed23ed5697662f8b267fa4.bindPopup(popup_36a9969886eb860dd61ace97a33e94b7)
+        ;
+
+        
+    
+    
+            var marker_a03a0529ed7778b465f1429ea94848e9 = L.marker(
+                [51.8486, 178.7352],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_3726829cc092b9e6cb4e4292164be387 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a03a0529ed7778b465f1429ea94848e9.setIcon(icon_3726829cc092b9e6cb4e4292164be387);
+        
+    
+        var popup_a9e71497c7b321af3d568456b6a4e4da = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3e8b3ebe69b33e8f29f08f5cdf50181d = $(`<div id="html_3e8b3ebe69b33e8f29f08f5cdf50181d" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Rat Islands, Aleutian Islands, Alaska<br><b>Date:</b> 2014-06-23 20:53:09.700000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_a9e71497c7b321af3d568456b6a4e4da.setContent(html_3e8b3ebe69b33e8f29f08f5cdf50181d);
+            
+        
+
+        marker_a03a0529ed7778b465f1429ea94848e9.bindPopup(popup_a9e71497c7b321af3d568456b6a4e4da)
+        ;
+
+        
+    
+    
+            var marker_a00aeb82b18c47718beb45159fee4370 = L.marker(
+                [-4.5049, 153.5216],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_a784f414d9aa0f3e7641066435ef1e2e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a00aeb82b18c47718beb45159fee4370.setIcon(icon_a784f414d9aa0f3e7641066435ef1e2e);
+        
+    
+        var popup_5a97ba9df6323d95e43ea2eda7d92b23 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_57d4ee8d1db295ce660660007743f07d = $(`<div id="html_57d4ee8d1db295ce660660007743f07d" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 140 km E of Kokopo, Papua New Guinea<br><b>Date:</b> 2016-12-17 10:51:10.500000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_5a97ba9df6323d95e43ea2eda7d92b23.setContent(html_57d4ee8d1db295ce660660007743f07d);
+            
+        
+
+        marker_a00aeb82b18c47718beb45159fee4370.bindPopup(popup_5a97ba9df6323d95e43ea2eda7d92b23)
+        ;
+
+        
+    
+    
+            var marker_50048ed596ccc93a15c3aa946848e5d0 = L.marker(
+                [-6.2464, 155.1718],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_0c6b21f514503fb29b052f3f19cf54c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_50048ed596ccc93a15c3aa946848e5d0.setIcon(icon_0c6b21f514503fb29b052f3f19cf54c0);
+        
+    
+        var popup_653f69deb113da3c77d8a7417895cd8b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b8f3b5dfbfd379c6477d2a97744ea331 = $(`<div id="html_b8f3b5dfbfd379c6477d2a97744ea331" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 35 km WNW of Panguna, Papua New Guinea<br><b>Date:</b> 2017-01-22 04:30:22.960000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_653f69deb113da3c77d8a7417895cd8b.setContent(html_b8f3b5dfbfd379c6477d2a97744ea331);
+            
+        
+
+        marker_50048ed596ccc93a15c3aa946848e5d0.bindPopup(popup_653f69deb113da3c77d8a7417895cd8b)
+        ;
+
+        
+    
+    
+            var marker_c665e87b7d96c5c90a3918b28602328e = L.marker(
+                [56.0039, -149.1658],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_739189699cfae074d2652f798f414832 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c665e87b7d96c5c90a3918b28602328e.setIcon(icon_739189699cfae074d2652f798f414832);
+        
+    
+        var popup_319a151dbd9222dc05ec3ce699072617 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9629767b00dcb17fd6e2de7fecf9effa = $(`<div id="html_9629767b00dcb17fd6e2de7fecf9effa" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 261 km SE of Chiniak, Alaska<br><b>Date:</b> 2018-01-23 09:31:40.890000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_319a151dbd9222dc05ec3ce699072617.setContent(html_9629767b00dcb17fd6e2de7fecf9effa);
+            
+        
+
+        marker_c665e87b7d96c5c90a3918b28602328e.bindPopup(popup_319a151dbd9222dc05ec3ce699072617)
+        ;
+
+        
+    
+    
+            var marker_45ceedae58b060a108309d34e6eb2538 = L.marker(
+                [-18.4743, 179.3502],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_74c1e3de650ae81500c5202dc047b0c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_45ceedae58b060a108309d34e6eb2538.setIcon(icon_74c1e3de650ae81500c5202dc047b0c4);
+        
+    
+        var popup_5fa48aadafe6152840a24ec4d16d00b0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d807cbfae447d34d034dd21104aff40b = $(`<div id="html_d807cbfae447d34d034dd21104aff40b" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 45 km S of Levuka, Fiji<br><b>Date:</b> 2018-09-06 15:49:18.710000+00:00<br><b>Magnitude:</b> 7.9</div>`)[0];
+                popup_5fa48aadafe6152840a24ec4d16d00b0.setContent(html_d807cbfae447d34d034dd21104aff40b);
+            
+        
+
+        marker_45ceedae58b060a108309d34e6eb2538.bindPopup(popup_5fa48aadafe6152840a24ec4d16d00b0)
+        ;
+
+        
+    
+    
+            var marker_99c462df7e3d0cb8f75fe0b8125040cf = L.marker(
+                [1.186, 122.857],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_30ca3464270bfee7793a21c0407dc4d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_99c462df7e3d0cb8f75fe0b8125040cf.setIcon(icon_30ca3464270bfee7793a21c0407dc4d6);
+        
+    
+        var popup_89fe404c5b8be8f236dc7dcd073da0a7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d7e0b0c2b31a2e3791797b5ec3650002 = $(`<div id="html_d7e0b0c2b31a2e3791797b5ec3650002" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 75 km NNW of Gorontalo, Indonesia<br><b>Date:</b> 1990-04-18 13:39:19.010000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_89fe404c5b8be8f236dc7dcd073da0a7.setContent(html_d7e0b0c2b31a2e3791797b5ec3650002);
+            
+        
+
+        marker_99c462df7e3d0cb8f75fe0b8125040cf.bindPopup(popup_89fe404c5b8be8f236dc7dcd073da0a7)
+        ;
+
+        
+    
+    
+            var marker_44fe6eebe21697dd7d478323a403a4df = L.marker(
+                [-8.48, 121.896],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_8956173fd5017e675b742a5656ef81de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_44fe6eebe21697dd7d478323a403a4df.setIcon(icon_8956173fd5017e675b742a5656ef81de);
+        
+    
+        var popup_0a32542eb636952cc1da39e41f7d80ab = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e0c64964488db026f0a67077dbb37884 = $(`<div id="html_e0c64964488db026f0a67077dbb37884" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 37 km WNW of Maumere, Indonesia<br><b>Date:</b> 1992-12-12 05:29:26.350000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_0a32542eb636952cc1da39e41f7d80ab.setContent(html_e0c64964488db026f0a67077dbb37884);
+            
+        
+
+        marker_44fe6eebe21697dd7d478323a403a4df.bindPopup(popup_0a32542eb636952cc1da39e41f7d80ab)
+        ;
+
+        
+    
+    
+            var marker_249699914255aa952d07bc6fc12a48b8 = L.marker(
+                [12.982, 144.801],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_2fe8652aaa4461306de6c4af065bdf04 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_249699914255aa952d07bc6fc12a48b8.setIcon(icon_2fe8652aaa4461306de6c4af065bdf04);
+        
+    
+        var popup_cd0629a611501c504e16e4e705fa52b9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7659c0ebad06b2c593044a09784ca616 = $(`<div id="html_7659c0ebad06b2c593044a09784ca616" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 32 km S of Inarajan Village, Guam<br><b>Date:</b> 1993-08-08 08:34:24.930000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_cd0629a611501c504e16e4e705fa52b9.setContent(html_7659c0ebad06b2c593044a09784ca616);
+            
+        
+
+        marker_249699914255aa952d07bc6fc12a48b8.bindPopup(popup_cd0629a611501c504e16e4e705fa52b9)
+        ;
+
+        
+    
+    
+            var marker_1c89448d7557e43248631271e8295333 = L.marker(
+                [-10.477, 112.835],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_57bd818ca0a9514e056f352e90371fac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1c89448d7557e43248631271e8295333.setIcon(icon_57bd818ca0a9514e056f352e90371fac);
+        
+    
+        var popup_16b8e4ce233ea7f312f6c3d3b3bb6718 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_be031c4e0614211b96ecc4b53bc72722 = $(`<div id="html_be031c4e0614211b96ecc4b53bc72722" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 249 km SSW of Kencong, Indonesia<br><b>Date:</b> 1994-06-02 18:17:34.020000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_16b8e4ce233ea7f312f6c3d3b3bb6718.setContent(html_be031c4e0614211b96ecc4b53bc72722);
+            
+        
+
+        marker_1c89448d7557e43248631271e8295333.bindPopup(popup_16b8e4ce233ea7f312f6c3d3b3bb6718)
+        ;
+
+        
+    
+    
+            var marker_20f955b798bee2f911fbe7f53fbf65e2 = L.marker(
+                [40.525, 143.419],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_984abc34bd98f567913326ffabdef7c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_20f955b798bee2f911fbe7f53fbf65e2.setIcon(icon_984abc34bd98f567913326ffabdef7c5);
+        
+    
+        var popup_f6898c3216886f786f73c3f65b4007a4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_daaf97a45fafa5adb31b14cf1f42cff2 = $(`<div id="html_daaf97a45fafa5adb31b14cf1f42cff2" style="width: 100.0%; height: 100.0%;"><b>Location:</b> off the east coast of Honshu, Japan<br><b>Date:</b> 1994-12-28 12:19:23.030000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_f6898c3216886f786f73c3f65b4007a4.setContent(html_daaf97a45fafa5adb31b14cf1f42cff2);
+            
+        
+
+        marker_20f955b798bee2f911fbe7f53fbf65e2.bindPopup(popup_f6898c3216886f786f73c3f65b4007a4)
+        ;
+
+        
+    
+    
+            var marker_44dbb1aa4754dc6c7c8ec5a7236a689b = L.marker(
+                [-22.101, -176.772],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_9847fb4764106bad7e322eacc478c3cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_44dbb1aa4754dc6c7c8ec5a7236a689b.setIcon(icon_9847fb4764106bad7e322eacc478c3cf);
+        
+    
+        var popup_80fc898d5ede0f71cf038fb75ab66e80 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_71ded9511c0b7b48641a3b26f984dd56 = $(`<div id="html_71ded9511c0b7b48641a3b26f984dd56" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 192 km WSW of Haveluloto, Tonga<br><b>Date:</b> 1997-10-14 09:53:18.150000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_80fc898d5ede0f71cf038fb75ab66e80.setContent(html_71ded9511c0b7b48641a3b26f984dd56);
+            
+        
+
+        marker_44dbb1aa4754dc6c7c8ec5a7236a689b.bindPopup(popup_80fc898d5ede0f71cf038fb75ab66e80)
+        ;
+
+        
+    
+    
+            var marker_995550fafa08039f2a1dbc05a24e6bf6 = L.marker(
+                [54.841, 162.035],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_fbe4a9ac10cc652012182185d3ee4211 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_995550fafa08039f2a1dbc05a24e6bf6.setIcon(icon_fbe4a9ac10cc652012182185d3ee4211);
+        
+    
+        var popup_bd659103a3eafeb52ba9adf9105caf23 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_18e651166590260b4a6a3582e8bced1c = $(`<div id="html_18e651166590260b4a6a3582e8bced1c" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 156 km S of Ust’-Kamchatsk Staryy, Russia<br><b>Date:</b> 1997-12-05 11:26:54.690000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_bd659103a3eafeb52ba9adf9105caf23.setContent(html_18e651166590260b4a6a3582e8bced1c);
+            
+        
+
+        marker_995550fafa08039f2a1dbc05a24e6bf6.bindPopup(popup_bd659103a3eafeb52ba9adf9105caf23)
+        ;
+
+        
+    
+    
+            var marker_7e5093c7e0b749f4b677b319f3335361 = L.marker(
+                [-5.233, 153.102],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_5bffb9a3c532fccc270fbf5ebbe0a315 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7e5093c7e0b749f4b677b319f3335361.setIcon(icon_5bffb9a3c532fccc270fbf5ebbe0a315);
+        
+    
+        var popup_a419dad33f7bec14ee2ab603c40924e4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3e7cff22ffa08518f7c23c14e1697620 = $(`<div id="html_3e7cff22ffa08518f7c23c14e1697620" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 135 km SE of Kokopo, Papua New Guinea<br><b>Date:</b> 2000-11-16 07:42:16.930000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_a419dad33f7bec14ee2ab603c40924e4.setContent(html_3e7cff22ffa08518f7c23c14e1697620);
+            
+        
+
+        marker_7e5093c7e0b749f4b677b319f3335361.bindPopup(popup_a419dad33f7bec14ee2ab603c40924e4)
+        ;
+
+        
+    
+    
+            var marker_4705f0000c483f9cf221ea8cb2cedefb = L.marker(
+                [-5.496, 151.781],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_38367ec04212ba080bff0febcd373a06 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4705f0000c483f9cf221ea8cb2cedefb.setIcon(icon_38367ec04212ba080bff0febcd373a06);
+        
+    
+        var popup_d962e0756f48c1b79ce165cdf1da373a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_529fc8cccd84f0d9b8451f96bbbfda16 = $(`<div id="html_529fc8cccd84f0d9b8451f96bbbfda16" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 138 km SSW of Kokopo, Papua New Guinea<br><b>Date:</b> 2000-11-17 21:01:56.490000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_d962e0756f48c1b79ce165cdf1da373a.setContent(html_529fc8cccd84f0d9b8451f96bbbfda16);
+            
+        
+
+        marker_4705f0000c483f9cf221ea8cb2cedefb.bindPopup(popup_d962e0756f48c1b79ce165cdf1da373a)
+        ;
+
+        
+    
+    
+            var marker_2201d32152af5728f63a8a22b2ee3af4 = L.marker(
+                [35.946, 90.541],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_a711982283c4f8f4f4039564780c23e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2201d32152af5728f63a8a22b2ee3af4.setIcon(icon_a711982283c4f8f4f4039564780c23e7);
+        
+    
+        var popup_931f822120afe82f2d67bb86c465c1f7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f06ed2276df532f8094af5f8e94b7446 = $(`<div id="html_f06ed2276df532f8094af5f8e94b7446" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Southern Qinghai, China<br><b>Date:</b> 2001-11-14 09:26:10.010000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_931f822120afe82f2d67bb86c465c1f7.setContent(html_f06ed2276df532f8094af5f8e94b7446);
+            
+        
+
+        marker_2201d32152af5728f63a8a22b2ee3af4.bindPopup(popup_931f822120afe82f2d67bb86c465c1f7)
+        ;
+
+        
+    
+    
+            var marker_beb829937be0e09a97e54b8ec72305c9 = L.marker(
+                [51.146, 178.65],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_761ac209cb5bbc2c8aacb972e8406e3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_beb829937be0e09a97e54b8ec72305c9.setIcon(icon_761ac209cb5bbc2c8aacb972e8406e3d);
+        
+    
+        var popup_75e8d461204fa8846f473bb36a97de03 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_323ccf8ea2f287ef840be9abbd897f33 = $(`<div id="html_323ccf8ea2f287ef840be9abbd897f33" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Rat Islands, Aleutian Islands, Alaska<br><b>Date:</b> 2003-11-17 06:43:06.800000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_75e8d461204fa8846f473bb36a97de03.setContent(html_323ccf8ea2f287ef840be9abbd897f33);
+            
+        
+
+        marker_beb829937be0e09a97e54b8ec72305c9.bindPopup(popup_75e8d461204fa8846f473bb36a97de03)
+        ;
+
+        
+    
+    
+            var marker_f1a8f09eb1512f76ba51e040cb9583d8 = L.marker(
+                [-19.987, -69.197],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_ecb386ff6879f468b611af6c8187877b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f1a8f09eb1512f76ba51e040cb9583d8.setIcon(icon_ecb386ff6879f468b611af6c8187877b);
+        
+    
+        var popup_426951fcd61b37d236628610c15a6b63 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_35d824eb833a1ad21fc07fbaf1e01190 = $(`<div id="html_35d824eb833a1ad21fc07fbaf1e01190" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 102 km ENE of Iquique, Chile<br><b>Date:</b> 2005-06-13 22:44:33.900000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_426951fcd61b37d236628610c15a6b63.setContent(html_35d824eb833a1ad21fc07fbaf1e01190);
+            
+        
+
+        marker_f1a8f09eb1512f76ba51e040cb9583d8.bindPopup(popup_426951fcd61b37d236628610c15a6b63)
+        ;
+
+        
+    
+    
+            var marker_97fccc106bf274f06d9f123f35c8f845 = L.marker(
+                [-25.996, -177.514],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_1ef61a668622a0b929a7e6d4833e061b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_97fccc106bf274f06d9f123f35c8f845.setIcon(icon_1ef61a668622a0b929a7e6d4833e061b);
+        
+    
+        var popup_10ba4f67eec16d7b6a5c21888f97f590 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f868d144a3f604d8eeb9878a68b41419 = $(`<div id="html_f868d144a3f604d8eeb9878a68b41419" style="width: 100.0%; height: 100.0%;"><b>Location:</b> south of the Fiji Islands<br><b>Date:</b> 2007-12-09 07:28:20.820000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_10ba4f67eec16d7b6a5c21888f97f590.setContent(html_f868d144a3f604d8eeb9878a68b41419);
+            
+        
+
+        marker_97fccc106bf274f06d9f123f35c8f845.bindPopup(popup_10ba4f67eec16d7b6a5c21888f97f590)
+        ;
+
+        
+    
+    
+            var marker_937005dd9e54e9d2c52bcf92d25761fc = L.marker(
+                [-45.762, 166.562],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_3884579b750a883054f18aee89b3243f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_937005dd9e54e9d2c52bcf92d25761fc.setIcon(icon_3884579b750a883054f18aee89b3243f);
+        
+    
+        var popup_2ed182fdeabfe7ee75e40354d0b39eff = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b5dff13e9e9470b34594c91621cfeca1 = $(`<div id="html_b5dff13e9e9470b34594c91621cfeca1" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 97 km WSW of Te Anau, New Zealand<br><b>Date:</b> 2009-07-15 09:22:29.030000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_2ed182fdeabfe7ee75e40354d0b39eff.setContent(html_b5dff13e9e9470b34594c91621cfeca1);
+            
+        
+
+        marker_937005dd9e54e9d2c52bcf92d25761fc.bindPopup(popup_2ed182fdeabfe7ee75e40354d0b39eff)
+        ;
+
+        
+    
+    
+            var marker_6fb516891d8678f8d0265add757558d4 = L.marker(
+                [-12.517, 166.382],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_0291ca813859007d041cd4d7e29687f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6fb516891d8678f8d0265add757558d4.setIcon(icon_0291ca813859007d041cd4d7e29687f4);
+        
+    
+        var popup_9f3c966d58a1a0325fcf9a895fa6f161 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_03ddf827c2101e795a3abcfdd80ac2a8 = $(`<div id="html_03ddf827c2101e795a3abcfdd80ac2a8" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 196 km NW of Sola, Vanuatu<br><b>Date:</b> 2009-10-07 22:18:51.240000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_9f3c966d58a1a0325fcf9a895fa6f161.setContent(html_03ddf827c2101e795a3abcfdd80ac2a8);
+            
+        
+
+        marker_6fb516891d8678f8d0265add757558d4.bindPopup(popup_9f3c966d58a1a0325fcf9a895fa6f161)
+        ;
+
+        
+    
+    
+            var marker_15fca93c9bcfeadb690bbc092bdf2ede = L.marker(
+                [-3.487, 100.082],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_55778cd8061bdead74aea32be42894c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_15fca93c9bcfeadb690bbc092bdf2ede.setIcon(icon_55778cd8061bdead74aea32be42894c7);
+        
+    
+        var popup_7d0e8014b30c53f2752793e1a66d8189 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f21c9341d965744474ff0f4d3053cf11 = $(`<div id="html_f21c9341d965744474ff0f4d3053cf11" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 215 km SW of Sungai Penuh, Indonesia<br><b>Date:</b> 2010-10-25 14:42:22.460000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_7d0e8014b30c53f2752793e1a66d8189.setContent(html_f21c9341d965744474ff0f4d3053cf11);
+            
+        
+
+        marker_15fca93c9bcfeadb690bbc092bdf2ede.bindPopup(popup_7d0e8014b30c53f2752793e1a66d8189)
+        ;
+
+        
+    
+    
+            var marker_00bc3d6331504b40cf42fc1e22f6ba2d = L.marker(
+                [52.788, -132.101],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_731634e3eb68443ecebaf116411e58e0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_00bc3d6331504b40cf42fc1e22f6ba2d.setIcon(icon_731634e3eb68443ecebaf116411e58e0);
+        
+    
+        var popup_f409252862cd98e231b90dac170eb478 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3b15a02ec3e1d2be12d2b0036aa764a6 = $(`<div id="html_3b15a02ec3e1d2be12d2b0036aa764a6" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 206 km SW of Prince Rupert, Canada<br><b>Date:</b> 2012-10-28 03:04:08.820000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_f409252862cd98e231b90dac170eb478.setContent(html_3b15a02ec3e1d2be12d2b0036aa764a6);
+            
+        
+
+        marker_00bc3d6331504b40cf42fc1e22f6ba2d.bindPopup(popup_f409252862cd98e231b90dac170eb478)
+        ;
+
+        
+    
+    
+            var marker_121f202c7dfc6eede10b1b6bed0c2e15 = L.marker(
+                [28.2305, 84.7314],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_c0995c6526012a99d9988d103c8b3ca5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_121f202c7dfc6eede10b1b6bed0c2e15.setIcon(icon_c0995c6526012a99d9988d103c8b3ca5);
+        
+    
+        var popup_c85ef3a1ddf2ab5abb56f11da4737c7f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_97abdcff7e300d748d20cb90a2886e6d = $(`<div id="html_97abdcff7e300d748d20cb90a2886e6d" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 67 km NNE of Bharatpur, Nepal<br><b>Date:</b> 2015-04-25 06:11:25.950000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_c85ef3a1ddf2ab5abb56f11da4737c7f.setContent(html_97abdcff7e300d748d20cb90a2886e6d);
+            
+        
+
+        marker_121f202c7dfc6eede10b1b6bed0c2e15.bindPopup(popup_c85ef3a1ddf2ab5abb56f11da4737c7f)
+        ;
+
+        
+    
+    
+            var marker_16e6e4fc5222b839c17a68a21396c3d6 = L.marker(
+                [27.8386, 140.4931],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_f5d2dcc334f7d6ad5b613adc3297da3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_16e6e4fc5222b839c17a68a21396c3d6.setIcon(icon_f5d2dcc334f7d6ad5b613adc3297da3d);
+        
+    
+        var popup_3895117f4478d5a0736e7c914eed82a5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_91a10f9e002e9fd7c4f81c4f20486672 = $(`<div id="html_91a10f9e002e9fd7c4f81c4f20486672" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Bonin Islands, Japan region<br><b>Date:</b> 2015-05-30 11:23:02.110000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_3895117f4478d5a0736e7c914eed82a5.setContent(html_91a10f9e002e9fd7c4f81c4f20486672);
+            
+        
+
+        marker_16e6e4fc5222b839c17a68a21396c3d6.bindPopup(popup_3895117f4478d5a0736e7c914eed82a5)
+        ;
+
+        
+    
+    
+            var marker_ab24d365061c78366030a3b801c90313 = L.marker(
+                [-4.9521, 94.3299],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_7773b360e114825ff8d7a5158b82d116 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ab24d365061c78366030a3b801c90313.setIcon(icon_7773b360e114825ff8d7a5158b82d116);
+        
+    
+        var popup_85b5f999c8e314fdc6eb7ab0f5409def = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4830e542f45c75b026d6bda097659196 = $(`<div id="html_4830e542f45c75b026d6bda097659196" style="width: 100.0%; height: 100.0%;"><b>Location:</b> southwest of Sumatra, Indonesia<br><b>Date:</b> 2016-03-02 12:49:48.110000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_85b5f999c8e314fdc6eb7ab0f5409def.setContent(html_4830e542f45c75b026d6bda097659196);
+            
+        
+
+        marker_ab24d365061c78366030a3b801c90313.bindPopup(popup_85b5f999c8e314fdc6eb7ab0f5409def)
+        ;
+
+        
+    
+    
+            var marker_cb80f40a54f15e9a3b583fb8ee6e9772 = L.marker(
+                [0.3819, -79.9218],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_285b43c352349a1518169b6d7a8ab9b6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cb80f40a54f15e9a3b583fb8ee6e9772.setIcon(icon_285b43c352349a1518169b6d7a8ab9b6);
+        
+    
+        var popup_ad087ad5d7a0b652f2f5ed65030c882a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_70233bec1c46d0f3d82e833105d507c6 = $(`<div id="html_70233bec1c46d0f3d82e833105d507c6" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 27 km SSE of Muisne, Ecuador<br><b>Date:</b> 2016-04-16 23:58:36.980000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_ad087ad5d7a0b652f2f5ed65030c882a.setContent(html_70233bec1c46d0f3d82e833105d507c6);
+            
+        
+
+        marker_cb80f40a54f15e9a3b583fb8ee6e9772.bindPopup(popup_ad087ad5d7a0b652f2f5ed65030c882a)
+        ;
+
+        
+    
+    
+            var marker_8894b7640e986dc5bb504655aece9d2e = L.marker(
+                [-42.7373, 173.054],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_0735e431997bac6a62b3a323159e78e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8894b7640e986dc5bb504655aece9d2e.setIcon(icon_0735e431997bac6a62b3a323159e78e6);
+        
+    
+        var popup_15bd3e14c4836ea8ce845c3923e40f07 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_edadd535de3df890167359cf4edd9d4e = $(`<div id="html_edadd535de3df890167359cf4edd9d4e" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 53 km NNE of Amberley, New Zealand<br><b>Date:</b> 2016-11-13 11:02:56.340000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_15bd3e14c4836ea8ce845c3923e40f07.setContent(html_edadd535de3df890167359cf4edd9d4e);
+            
+        
+
+        marker_8894b7640e986dc5bb504655aece9d2e.bindPopup(popup_15bd3e14c4836ea8ce845c3923e40f07)
+        ;
+
+        
+    
+    
+            var marker_a00d82b6528eae7d36a218de155721eb = L.marker(
+                [-10.6812, 161.3273],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_3a46258e2e15c0bf4198b402703ff4f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a00d82b6528eae7d36a218de155721eb.setIcon(icon_3a46258e2e15c0bf4198b402703ff4f9);
+        
+    
+        var popup_9fef91dba4a2aaed0f0a9a25150ad953 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eb70cd1cadad526494c76aa8bea89ae1 = $(`<div id="html_eb70cd1cadad526494c76aa8bea89ae1" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 69 km WSW of Kirakira, Solomon Islands<br><b>Date:</b> 2016-12-08 17:38:46.280000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_9fef91dba4a2aaed0f0a9a25150ad953.setContent(html_eb70cd1cadad526494c76aa8bea89ae1);
+            
+        
+
+        marker_a00d82b6528eae7d36a218de155721eb.bindPopup(popup_9fef91dba4a2aaed0f0a9a25150ad953)
+        ;
+
+        
+    
+    
+            var marker_9546e1e54bd578452014baeb25198929 = L.marker(
+                [55.0715, -158.596],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_0b3154cf755c242aad67db0878e0ccde = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9546e1e54bd578452014baeb25198929.setIcon(icon_0b3154cf755c242aad67db0878e0ccde);
+        
+    
+        var popup_aa6b121bf664c48f0eb20b025a164c14 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2bd2f02715ff28e247daba245d34369f = $(`<div id="html_2bd2f02715ff28e247daba245d34369f" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 99 km SSE of Perryville, Alaska<br><b>Date:</b> 2020-07-22 06:12:44.810000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_aa6b121bf664c48f0eb20b025a164c14.setContent(html_2bd2f02715ff28e247daba245d34369f);
+            
+        
+
+        marker_9546e1e54bd578452014baeb25198929.bindPopup(popup_aa6b121bf664c48f0eb20b025a164c14)
+        ;
+
+        
+    
+    
+            var marker_b88605d4d148b11c9a3a69cc29043e77 = L.marker(
+                [37.2256, 37.0143],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_6b51e965490a0c5a46f85e57eb039552 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b88605d4d148b11c9a3a69cc29043e77.setIcon(icon_6b51e965490a0c5a46f85e57eb039552);
+        
+    
+        var popup_c049ce92e6fc5a77cf5318cd3d863a36 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_edd86e150ee992e5403ec1e6326500c1 = $(`<div id="html_edd86e150ee992e5403ec1e6326500c1" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Pazarcik earthquake, Kahramanmaras earthquake sequence<br><b>Date:</b> 2023-02-06 01:17:34.342000+00:00<br><b>Magnitude:</b> 7.8</div>`)[0];
+                popup_c049ce92e6fc5a77cf5318cd3d863a36.setContent(html_edd86e150ee992e5403ec1e6326500c1);
+            
+        
+
+        marker_b88605d4d148b11c9a3a69cc29043e77.bindPopup(popup_c049ce92e6fc5a77cf5318cd3d863a36)
+        ;
+
+        
+    
+    
+            var marker_1216be29de3472ee9a7828f51b35983a = L.marker(
+                [15.679, 121.172],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_a3091c07520f4632e6342ccda5f9ff85 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1216be29de3472ee9a7828f51b35983a.setIcon(icon_a3091c07520f4632e6342ccda5f9ff85);
+        
+    
+        var popup_7ecea54e7652e291474445415efc28c9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5862ab6b28f1447fec75262890428845 = $(`<div id="html_5862ab6b28f1447fec75262890428845" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 4 km E of Macapsing, Philippines<br><b>Date:</b> 1990-07-16 07:26:34.610000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_7ecea54e7652e291474445415efc28c9.setContent(html_5862ab6b28f1447fec75262890428845);
+            
+        
+
+        marker_1216be29de3472ee9a7828f51b35983a.bindPopup(popup_7ecea54e7652e291474445415efc28c9)
+        ;
+
+        
+    
+    
+            var marker_41f83ac6da174b21a5c2dd3c94299baf = L.marker(
+                [11.742, -87.34],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_79e6b5c2d94e3947fb0e2f3f339e9d88 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_41f83ac6da174b21a5c2dd3c94299baf.setIcon(icon_79e6b5c2d94e3947fb0e2f3f339e9d88);
+        
+    
+        var popup_b589970b7f9fb4939b51b86510e9f826 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_db2cf7216e58ff04c5d9bea4e953e9e6 = $(`<div id="html_db2cf7216e58ff04c5d9bea4e953e9e6" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 83 km SSW of Corinto, Nicaragua<br><b>Date:</b> 1992-09-02 00:16:01.690000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_b589970b7f9fb4939b51b86510e9f826.setContent(html_db2cf7216e58ff04c5d9bea4e953e9e6);
+            
+        
+
+        marker_41f83ac6da174b21a5c2dd3c94299baf.bindPopup(popup_b589970b7f9fb4939b51b86510e9f826)
+        ;
+
+        
+    
+    
+            var marker_d1741dd7863e102087ca535dd2bc231e = L.marker(
+                [42.851, 139.197],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_98fafba7589ce3693e52607f2c5eca51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d1741dd7863e102087ca535dd2bc231e.setIcon(icon_98fafba7589ce3693e52607f2c5eca51);
+        
+    
+        var popup_f7d9963449cf8b3640ebbfefebfedd52 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e33c1095626d6d61c10a07afe7c6bfc4 = $(`<div id="html_e33c1095626d6d61c10a07afe7c6bfc4" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 107 km W of Iwanai, Japan<br><b>Date:</b> 1993-07-12 13:17:11.960000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_f7d9963449cf8b3640ebbfefebfedd52.setContent(html_e33c1095626d6d61c10a07afe7c6bfc4);
+            
+        
+
+        marker_d1741dd7863e102087ca535dd2bc231e.bindPopup(popup_f7d9963449cf8b3640ebbfefebfedd52)
+        ;
+
+        
+    
+    
+            var marker_37485ffeb5a5ca997963fee6f7feb657 = L.marker(
+                [-23.008, 169.9],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_dbe79058408cd81c98fce3d06747f7fe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_37485ffeb5a5ca997963fee6f7feb657.setIcon(icon_dbe79058408cd81c98fce3d06747f7fe);
+        
+    
+        var popup_9ccce3c7ecb4c6e5f2fe891e247a2e33 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f2d43b8b55970f1fe4abb931bad6c33c = $(`<div id="html_f2d43b8b55970f1fe4abb931bad6c33c" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 249 km E of Vao, New Caledonia<br><b>Date:</b> 1995-05-16 20:12:44.220000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_9ccce3c7ecb4c6e5f2fe891e247a2e33.setContent(html_f2d43b8b55970f1fe4abb931bad6c33c);
+            
+        
+
+        marker_37485ffeb5a5ca997963fee6f7feb657.bindPopup(popup_9ccce3c7ecb4c6e5f2fe891e247a2e33)
+        ;
+
+        
+    
+    
+            var marker_0ba28f822b7ff2976cd2ead17f4ad4e4 = L.marker(
+                [-5.799, 154.178],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_db212db065d9817a2e7bff16b870fd0b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0ba28f822b7ff2976cd2ead17f4ad4e4.setIcon(icon_db212db065d9817a2e7bff16b870fd0b);
+        
+    
+        var popup_c67dd04b148b16bd1f9ed57f32760d15 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ceb89af2bae6f668a5e627c434ad8b2a = $(`<div id="html_ceb89af2bae6f668a5e627c434ad8b2a" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 155 km WNW of Panguna, Papua New Guinea<br><b>Date:</b> 1995-08-16 10:27:28.630000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_c67dd04b148b16bd1f9ed57f32760d15.setContent(html_ceb89af2bae6f668a5e627c434ad8b2a);
+            
+        
+
+        marker_0ba28f822b7ff2976cd2ead17f4ad4e4.bindPopup(popup_c67dd04b148b16bd1f9ed57f32760d15)
+        ;
+
+        
+    
+    
+            var marker_adcd3b9b2ee55d11ef6d0abc99d7a9f9 = L.marker(
+                [-14.993, -75.675],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_ed6cf1a7d93a33505d4c5f8565dc5cfe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_adcd3b9b2ee55d11ef6d0abc99d7a9f9.setIcon(icon_ed6cf1a7d93a33505d4c5f8565dc5cfe);
+        
+    
+        var popup_ecbac4bea9440033ba815425b86fd758 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2d8de5adcd1849b7528944de63187abc = $(`<div id="html_2d8de5adcd1849b7528944de63187abc" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 60 km SW of Changuillo, Peru<br><b>Date:</b> 1996-11-12 16:59:44.030000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_ecbac4bea9440033ba815425b86fd758.setContent(html_2d8de5adcd1849b7528944de63187abc);
+            
+        
+
+        marker_adcd3b9b2ee55d11ef6d0abc99d7a9f9.bindPopup(popup_ecbac4bea9440033ba815425b86fd758)
+        ;
+
+        
+    
+    
+            var marker_da5f44337e3393e6d023004af05e4011 = L.marker(
+                [-12.584, 166.676],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_12b1a8afff52aa6165ea0f3c2c0bec96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_da5f44337e3393e6d023004af05e4011.setIcon(icon_12b1a8afff52aa6165ea0f3c2c0bec96);
+        
+    
+        var popup_aa464634343a35580614c81010272dbe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a9e6067756541be095ea8be5b5874895 = $(`<div id="html_a9e6067756541be095ea8be5b5874895" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 171 km NNW of Sola, Vanuatu<br><b>Date:</b> 1997-04-21 12:02:26.430000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_aa464634343a35580614c81010272dbe.setContent(html_a9e6067756541be095ea8be5b5874895);
+            
+        
+
+        marker_da5f44337e3393e6d023004af05e4011.bindPopup(popup_aa464634343a35580614c81010272dbe)
+        ;
+
+        
+    
+    
+            var marker_ffe66f61003cb4b5a9c28abb500f6a46 = L.marker(
+                [-2.071, 124.891],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_91dd749b40ca78c0d6b3d4c6ff7fb85e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ffe66f61003cb4b5a9c28abb500f6a46.setIcon(icon_91dd749b40ca78c0d6b3d4c6ff7fb85e);
+        
+    
+        var popup_a278c4262b60dea6a5461fca4dd479ad = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e91098d26c7f54bddabfe466d757f7b8 = $(`<div id="html_e91098d26c7f54bddabfe466d757f7b8" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 264 km ESE of Luwuk, Indonesia<br><b>Date:</b> 1998-11-29 14:10:31.960000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_a278c4262b60dea6a5461fca4dd479ad.setContent(html_e91098d26c7f54bddabfe466d757f7b8);
+            
+        
+
+        marker_ffe66f61003cb4b5a9c28abb500f6a46.bindPopup(popup_a278c4262b60dea6a5461fca4dd479ad)
+        ;
+
+        
+    
+    
+            var marker_87d5d27471669c39ba537b6e3cae9a35 = L.marker(
+                [23.772, 120.982],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_7161d81228aceac5ab94b0a826a0233b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_87d5d27471669c39ba537b6e3cae9a35.setIcon(icon_7161d81228aceac5ab94b0a826a0233b);
+        
+    
+        var popup_2760689a1152458ed7d4da756d4e1ce0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f08a8896f6d5f502b22f074142dc5620 = $(`<div id="html_f08a8896f6d5f502b22f074142dc5620" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 21 km S of Puli, Taiwan<br><b>Date:</b> 1999-09-20 17:47:18.490000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_2760689a1152458ed7d4da756d4e1ce0.setContent(html_f08a8896f6d5f502b22f074142dc5620);
+            
+        
+
+        marker_87d5d27471669c39ba537b6e3cae9a35.bindPopup(popup_2760689a1152458ed7d4da756d4e1ce0)
+        ;
+
+        
+    
+    
+            var marker_60627d0e3ba24b7f7cb794b625503727 = L.marker(
+                [13.049, -88.66],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_dc24ba10cc12a92dd3b398ae06c3d64b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_60627d0e3ba24b7f7cb794b625503727.setIcon(icon_dc24ba10cc12a92dd3b398ae06c3d64b);
+        
+    
+        var popup_2c304c49f89a068967a947cb6fd275a1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c02135544b95152dd785f838ac2650c6 = $(`<div id="html_c02135544b95152dd785f838ac2650c6" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 28 km SSW of Puerto El Triunfo, El Salvador<br><b>Date:</b> 2001-01-13 17:33:32.380000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_2c304c49f89a068967a947cb6fd275a1.setContent(html_c02135544b95152dd785f838ac2650c6);
+            
+        
+
+        marker_60627d0e3ba24b7f7cb794b625503727.bindPopup(popup_2c304c49f89a068967a947cb6fd275a1)
+        ;
+
+        
+    
+    
+            var marker_8964f7162ef3e6118e48583d49b5c988 = L.marker(
+                [23.419, 70.232],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_61407618b434e35c3773c99f60ff2da4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8964f7162ef3e6118e48583d49b5c988.setIcon(icon_61407618b434e35c3773c99f60ff2da4);
+        
+    
+        var popup_d04093166df930dd9b354d4743f5b4ff = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e297aea0fc19d551d7c6d717885f83e4 = $(`<div id="html_e297aea0fc19d551d7c6d717885f83e4" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 17 km NW of Bhach?u, India<br><b>Date:</b> 2001-01-26 03:16:40.500000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_d04093166df930dd9b354d4743f5b4ff.setContent(html_e297aea0fc19d551d7c6d717885f83e4);
+            
+        
+
+        marker_8964f7162ef3e6118e48583d49b5c988.bindPopup(popup_d04093166df930dd9b354d4743f5b4ff)
+        ;
+
+        
+    
+    
+            var marker_4c01fe2b762d5ac4a5aa59b3d922f3ab = L.marker(
+                [-21.696, -179.513],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_e802c95ea66319b34cf7e6ece8528408 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4c01fe2b762d5ac4a5aa59b3d922f3ab.setIcon(icon_e802c95ea66319b34cf7e6ece8528408);
+        
+    
+        var popup_83197508227946a6241b46bc0da815dc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0886504c9e2af5e0608b62ba0b2b2f12 = $(`<div id="html_0886504c9e2af5e0608b62ba0b2b2f12" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Fiji region<br><b>Date:</b> 2002-08-19 11:01:01.190000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_83197508227946a6241b46bc0da815dc.setContent(html_0886504c9e2af5e0608b62ba0b2b2f12);
+            
+        
+
+        marker_4c01fe2b762d5ac4a5aa59b3d922f3ab.bindPopup(popup_83197508227946a6241b46bc0da815dc)
+        ;
+
+        
+    
+    
+            var marker_3c413c1b3a4defe034932eed2ace3c5a = L.marker(
+                [-23.884, 178.495],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_da3239c5723521a8c10e0b73e179c2e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3c413c1b3a4defe034932eed2ace3c5a.setIcon(icon_da3239c5723521a8c10e0b73e179c2e8);
+        
+    
+        var popup_dbd02ad8fc2433625aa6d340b0c26745 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_38a4752439a149988907e1afe4b6a9b3 = $(`<div id="html_38a4752439a149988907e1afe4b6a9b3" style="width: 100.0%; height: 100.0%;"><b>Location:</b> south of the Fiji Islands<br><b>Date:</b> 2002-08-19 11:08:24.310000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_dbd02ad8fc2433625aa6d340b0c26745.setContent(html_38a4752439a149988907e1afe4b6a9b3);
+            
+        
+
+        marker_3c413c1b3a4defe034932eed2ace3c5a.bindPopup(popup_dbd02ad8fc2433625aa6d340b0c26745)
+        ;
+
+        
+    
+    
+            var marker_26e3c8f42f207181ecfc84a3a7352ae4 = L.marker(
+                [-9.284, 107.419],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_23c324de9aa47af1fd0693e762ddf7f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_26e3c8f42f207181ecfc84a3a7352ae4.setIcon(icon_23c324de9aa47af1fd0693e762ddf7f1);
+        
+    
+        var popup_798a5d16fc4bfdafcc5420d388ea5d88 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ac15bb4f52a423e3d317647e72b4cfdc = $(`<div id="html_ac15bb4f52a423e3d317647e72b4cfdc" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 226 km SSW of Singaparna, Indonesia<br><b>Date:</b> 2006-07-17 08:19:26.680000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_798a5d16fc4bfdafcc5420d388ea5d88.setContent(html_ac15bb4f52a423e3d317647e72b4cfdc);
+            
+        
+
+        marker_26e3c8f42f207181ecfc84a3a7352ae4.bindPopup(popup_798a5d16fc4bfdafcc5420d388ea5d88)
+        ;
+
+        
+    
+    
+            var marker_29adb12f9f7213f9068d3cfc7fad931d = L.marker(
+                [-22.247, -69.89],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_e35fb985b20570e95ddb228a1a6b466d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_29adb12f9f7213f9068d3cfc7fad931d.setIcon(icon_e35fb985b20570e95ddb228a1a6b466d);
+        
+    
+        var popup_2ff5372e0769b5821a60d13878250473 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b5d5cc1399ee07098399da7dc3c04c9f = $(`<div id="html_b5d5cc1399ee07098399da7dc3c04c9f" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 36 km ESE of Tocopilla, Chile<br><b>Date:</b> 2007-11-14 15:40:50.530000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_2ff5372e0769b5821a60d13878250473.setContent(html_b5d5cc1399ee07098399da7dc3c04c9f);
+            
+        
+
+        marker_29adb12f9f7213f9068d3cfc7fad931d.bindPopup(popup_2ff5372e0769b5821a60d13878250473)
+        ;
+
+        
+    
+    
+            var marker_df4a533e3a8583a67f4ad690083ad893 = L.marker(
+                [53.882, 152.886],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_ed836a8d18be6500f5b5df7b8308f2cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_df4a533e3a8583a67f4ad690083ad893.setIcon(icon_ed836a8d18be6500f5b5df7b8308f2cb);
+        
+    
+        var popup_8d91c1bca5060abf0522ccaf93134afc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b538f74a380c7731bccdd93750c1070c = $(`<div id="html_b538f74a380c7731bccdd93750c1070c" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Sea of Okhotsk<br><b>Date:</b> 2008-07-05 02:12:04.480000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_8d91c1bca5060abf0522ccaf93134afc.setContent(html_b538f74a380c7731bccdd93750c1070c);
+            
+        
+
+        marker_df4a533e3a8583a67f4ad690083ad893.bindPopup(popup_8d91c1bca5060abf0522ccaf93134afc)
+        ;
+
+        
+    
+    
+            var marker_87345c4bd9b79073ab3cd5be219ab467 = L.marker(
+                [-0.414, 132.885],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_a1f043ed4d69d4de01b6fac380c12fae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_87345c4bd9b79073ab3cd5be219ab467.setIcon(icon_a1f043ed4d69d4de01b6fac380c12fae);
+        
+    
+        var popup_4a668e2de49be200b654844ad43d9591 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c9252795058d9b7d0ab9664beb440bc9 = $(`<div id="html_c9252795058d9b7d0ab9664beb440bc9" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 140 km WNW of Manokwari, Indonesia<br><b>Date:</b> 2009-01-03 19:43:50.650000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_4a668e2de49be200b654844ad43d9591.setContent(html_c9252795058d9b7d0ab9664beb440bc9);
+            
+        
+
+        marker_87345c4bd9b79073ab3cd5be219ab467.bindPopup(popup_4a668e2de49be200b654844ad43d9591)
+        ;
+
+        
+    
+    
+            var marker_9e601a35eabfd17c699e3771f2f2f976 = L.marker(
+                [-13.006, 166.51],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_91176b1d594a0ccb15023ced96a6bd22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9e601a35eabfd17c699e3771f2f2f976.setIcon(icon_91176b1d594a0ccb15023ced96a6bd22);
+        
+    
+        var popup_0d38c26f949c4dc87baf6bf411b6028c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d269e10b42e8cdb1ec3aec343b8a7477 = $(`<div id="html_d269e10b42e8cdb1ec3aec343b8a7477" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 148 km NW of Sola, Vanuatu<br><b>Date:</b> 2009-10-07 22:03:14.470000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_0d38c26f949c4dc87baf6bf411b6028c.setContent(html_d269e10b42e8cdb1ec3aec343b8a7477);
+            
+        
+
+        marker_9e601a35eabfd17c699e3771f2f2f976.bindPopup(popup_0d38c26f949c4dc87baf6bf411b6028c)
+        ;
+
+        
+    
+    
+            var marker_1ee5f28a42d1002161af83c4ab8045e7 = L.marker(
+                [38.058, 144.59],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_228e61916cb9802968e0500f127d7f08 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1ee5f28a42d1002161af83c4ab8045e7.setIcon(icon_228e61916cb9802968e0500f127d7f08);
+        
+    
+        var popup_0e18ebfe919a2298afadaa9d62316ea9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ec790f60572f9b564560dc317f2c25d8 = $(`<div id="html_ec790f60572f9b564560dc317f2c25d8" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 272 km ESE of Kamaishi, Japan<br><b>Date:</b> 2011-03-11 06:25:50.300000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_0e18ebfe919a2298afadaa9d62316ea9.setContent(html_ec790f60572f9b564560dc317f2c25d8);
+            
+        
+
+        marker_1ee5f28a42d1002161af83c4ab8045e7.bindPopup(popup_0e18ebfe919a2298afadaa9d62316ea9)
+        ;
+
+        
+    
+    
+            var marker_fc41955498caa4f686ad0ecb6706004a = L.marker(
+                [49.8, 145.064],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_e1238a53e2b34dd9c2c6d1d7b3da6894 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_fc41955498caa4f686ad0ecb6706004a.setIcon(icon_e1238a53e2b34dd9c2c6d1d7b3da6894);
+        
+    
+        var popup_e36683aafb90b547e2a5f5a21f1d4e0d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f3785791bc7e7c83e3c3c958e96ef0f2 = $(`<div id="html_f3785791bc7e7c83e3c3c958e96ef0f2" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 156 km ENE of Poronaysk, Russia<br><b>Date:</b> 2012-08-14 02:59:38.460000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_e36683aafb90b547e2a5f5a21f1d4e0d.setContent(html_f3785791bc7e7c83e3c3c958e96ef0f2);
+            
+        
+
+        marker_fc41955498caa4f686ad0ecb6706004a.bindPopup(popup_e36683aafb90b547e2a5f5a21f1d4e0d)
+        ;
+
+        
+    
+    
+            var marker_f5b39460e15983e5b57a08ee87bbf038 = L.marker(
+                [28.033, 61.996],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_716f31441f29ed87bfbf9bd98627c2e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f5b39460e15983e5b57a08ee87bbf038.setIcon(icon_716f31441f29ed87bfbf9bd98627c2e1);
+        
+    
+        var popup_698fe36641bdd26153ec0062df1f730e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b2104b4a03e9f20bed2899a30d6c2ab8 = $(`<div id="html_b2104b4a03e9f20bed2899a30d6c2ab8" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 79 km ESE of Kh?sh, Iran<br><b>Date:</b> 2013-04-16 10:44:20.180000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_698fe36641bdd26153ec0062df1f730e.setContent(html_b2104b4a03e9f20bed2899a30d6c2ab8);
+            
+        
+
+        marker_f5b39460e15983e5b57a08ee87bbf038.bindPopup(popup_698fe36641bdd26153ec0062df1f730e)
+        ;
+
+        
+    
+    
+            var marker_e99a422675964bcbdfcc570ad008b35e = L.marker(
+                [26.951, 65.5009],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_7cfbb67d1481c20e7386ad20d5e89369 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e99a422675964bcbdfcc570ad008b35e.setIcon(icon_7cfbb67d1481c20e7386ad20d5e89369);
+        
+    
+        var popup_fc9d0f104a86a7fbb5304ea0d2005701 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_938f8092ca304ffe7e99a0d453973bc6 = $(`<div id="html_938f8092ca304ffe7e99a0d453973bc6" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 113 km NW of Bela, Pakistan<br><b>Date:</b> 2013-09-24 11:29:47.970000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_fc9d0f104a86a7fbb5304ea0d2005701.setContent(html_938f8092ca304ffe7e99a0d453973bc6);
+            
+        
+
+        marker_e99a422675964bcbdfcc570ad008b35e.bindPopup(popup_fc9d0f104a86a7fbb5304ea0d2005701)
+        ;
+
+        
+    
+    
+            var marker_de914490f159807fa3b18cfcf3d92713 = L.marker(
+                [-60.2738, -46.4011],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_c76850773d26ca597fa716229b88eca9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_de914490f159807fa3b18cfcf3d92713.setIcon(icon_c76850773d26ca597fa716229b88eca9);
+        
+    
+        var popup_37c17f585926a7f5aa77f04e29b79ec8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4acb612ff40575c5b0f271310859f6c2 = $(`<div id="html_4acb612ff40575c5b0f271310859f6c2" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Scotia Sea<br><b>Date:</b> 2013-11-17 09:04:55.530000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_37c17f585926a7f5aa77f04e29b79ec8.setContent(html_4acb612ff40575c5b0f271310859f6c2);
+            
+        
+
+        marker_de914490f159807fa3b18cfcf3d92713.bindPopup(popup_37c17f585926a7f5aa77f04e29b79ec8)
+        ;
+
+        
+    
+    
+            var marker_165c08d02c1320f17b5e039e51087aa5 = L.marker(
+                [-20.5709, -70.4931],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_e23110677e0236f2cd1166c0b2a15bde = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_165c08d02c1320f17b5e039e51087aa5.setIcon(icon_e23110677e0236f2cd1166c0b2a15bde);
+        
+    
+        var popup_b3961b0e10005dc1b5949dec495bfc85 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2317555dc93cd9ddc148b9e23648324f = $(`<div id="html_2317555dc93cd9ddc148b9e23648324f" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 53 km SW of Iquique, Chile<br><b>Date:</b> 2014-04-03 02:43:13.110000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_b3961b0e10005dc1b5949dec495bfc85.setContent(html_2317555dc93cd9ddc148b9e23648324f);
+            
+        
+
+        marker_165c08d02c1320f17b5e039e51087aa5.bindPopup(popup_b3961b0e10005dc1b5949dec495bfc85)
+        ;
+
+        
+    
+    
+            var marker_7a3208388a6d571209c217e8b66b6688 = L.marker(
+                [18.5429, 145.5073],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_f1c8b54fb233189064e129b49034be65 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7a3208388a6d571209c217e8b66b6688.setIcon(icon_f1c8b54fb233189064e129b49034be65);
+        
+    
+        var popup_451420f63c4dd790429f8b6d62adaa0b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2316be96772fed4116126ae9ff5f0bf2 = $(`<div id="html_2316be96772fed4116126ae9ff5f0bf2" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Pagan region, Northern Mariana Islands<br><b>Date:</b> 2016-07-29 21:18:24.740000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_451420f63c4dd790429f8b6d62adaa0b.setContent(html_2316be96772fed4116126ae9ff5f0bf2);
+            
+        
+
+        marker_7a3208388a6d571209c217e8b66b6688.bindPopup(popup_451420f63c4dd790429f8b6d62adaa0b)
+        ;
+
+        
+    
+    
+            var marker_b938f1ee93b0b7751f6453397fe8eb27 = L.marker(
+                [54.4434, 168.857],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_fbcd8d236887d4ece41c25a8aeb07f9f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b938f1ee93b0b7751f6453397fe8eb27.setIcon(icon_fbcd8d236887d4ece41c25a8aeb07f9f);
+        
+    
+        var popup_c2253f7931ca97adc3267cf5a240f006 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4563d7e13c6e71a52e0da59a20338acf = $(`<div id="html_4563d7e13c6e71a52e0da59a20338acf" style="width: 100.0%; height: 100.0%;"><b>Location:</b> Komandorskiye Ostrova, Russia region<br><b>Date:</b> 2017-07-17 23:34:13.740000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_c2253f7931ca97adc3267cf5a240f006.setContent(html_4563d7e13c6e71a52e0da59a20338acf);
+            
+        
+
+        marker_b938f1ee93b0b7751f6453397fe8eb27.bindPopup(popup_c2253f7931ca97adc3267cf5a240f006)
+        ;
+
+        
+    
+    
+            var marker_f92b79eefa85bb2b73ac5ddcba1513bc = L.marker(
+                [19.4193, -78.756],
+                {
+}
+            ).addTo(map_324fab5d135b3f84b3657916499d7bdc);
+        
+    
+            var icon_151b981b399b18fe1be439b5fbbc91b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f92b79eefa85bb2b73ac5ddcba1513bc.setIcon(icon_151b981b399b18fe1be439b5fbbc91b9);
+        
+    
+        var popup_938e8983b1e32acfc358e26a494f8561 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d289c7bf7721186d44d8131a2cd1900f = $(`<div id="html_d289c7bf7721186d44d8131a2cd1900f" style="width: 100.0%; height: 100.0%;"><b>Location:</b> 123 km NNW of Lucea, Jamaica<br><b>Date:</b> 2020-01-28 19:10:24.918000+00:00<br><b>Magnitude:</b> 7.7</div>`)[0];
+                popup_938e8983b1e32acfc358e26a494f8561.setContent(html_d289c7bf7721186d44d8131a2cd1900f);
+            
+        
+
+        marker_f92b79eefa85bb2b73ac5ddcba1513bc.bindPopup(popup_938e8983b1e32acfc358e26a494f8561)
+        ;
+
+        
+    
+</script>
+</html>
